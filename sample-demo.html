@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://ziqiflow.flycore.cn/form-generater/lib/FormMaking.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css">
+
+    <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://cdn.staticfile.org/element-ui/2.8.2/index.js"></script>
+
+    <script src="https://ziqiflow.flycore.cn/form-generater/lib/FormMaking.umd.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="app">
+    <fm-making-form :widget-form.sync='widgetForm'></fm-making-form>
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+    window.baseURL = 'https://ziqiflow.flycore.cn/form-generater/';//路径
+    window.form_set_api=window.baseURL+"form_set.json";//全部的配置信息
+    window.callback_default_api=window.baseURL+'api/oa/tablefun/callback';
+
+
+    new Vue({
+        el: '#app',
+        components: {
+        },
+        data: function () {
+            return {
+                widgetForm: {
+
+                    list: [],
+                    remove_list: [],
+                    config: {
+                        labelWidth: 180,
+                        labelPosition: 'top',
+                        xs_config: {
+                            //手机上的配置
+                            labelWidth: 180,
+                            labelPosition: 'top',
+                            size: "medium",
+                            rowMax: 1,
+
+                        },
+                        sm_config: {
+                            //ipad上的配置
+                            labelWidth: 180,
+                            labelPosition: 'top',
+                            size: "small",
+                            rowMax: 2,
+                        }
+                    },
+
+                }
+            }
+        },
+        methods: {
+
+
+
+        }
+    });
+
+
+</script>
