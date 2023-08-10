@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+    <link rel="stylesheet" href="lib/FormMaking.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.13/theme-chalk/index.css">
+
+    <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://cdn.staticfile.org/element-ui/2.15.13/index.js"></script>
+
+    <script src="https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js"></script>
+
+    <script src="lib/FormMaking.umd.min.js"></script>
+
+    <script src="components/dist/js/CChoseChinaArea.js"></script>
+    <script src="components/dist/js/FmEleCascader.js"></script>
+
+</head>
+<body>
+
+
+<div id="app">
+
+<!--    <div>-->
+<!--        <el-button @click="alert(JSON.stringify(widgetForm))">打开</el-button>-->
+<!--    </div>-->
+
+
+<!--    {{widgetForm}}-->
+
+
+
+    <fm-making-form :widget-form.sync='widgetForm'></fm-making-form>
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
+<script>
+
+
+    window.baseURL = '';
+    window.form_set_api=window.baseURL+"form_set.json";
+    window.callback_default_api=window.baseURL+'api/oa/tablefun/callback';
+
+
+    new Vue({
+        el: '#app',
+        components: {
+        },
+        data: function () {
+            return {
+                widgetForm: {
+
+                    list: [],
+                    remove_list: [],
+                    config: {
+                        labelWidth: 180,
+                        labelPosition: 'top',
+                        xs_config: {
+                            //手机上的配置
+                            labelWidth: 180,
+                            labelPosition: 'top',
+                            size: "medium",
+                            rowMax: 1,
+
+                        },
+                        sm_config: {
+                            //ipad上的配置
+                            labelWidth: 180,
+                            labelPosition: 'top',
+                            size: "small",
+                            rowMax: 2,
+                        }
+                    },
+
+                }
+            }
+        },
+
+        methods: {
+
+
+
+
+
+        },
+        mounted(){
+
+            let val=localStorage.getItem('widgetFormDemo001')
+            if(!!val){
+                this.widgetForm=JSON.parse(val);
+            }
+
+        }
+
+        ,
+        watch: {
+
+            widgetForm: {
+                deep: true,
+                handler: function (val) {
+
+                    localStorage.setItem('widgetFormDemo001',JSON.stringify(val))
+
+                }
+            }
+        }
+    });
+
+
+</script>

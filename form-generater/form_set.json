@@ -1,0 +1,862 @@
+{
+  "advanceComponents": [
+    {
+      "type": "blank",
+      "tooltip": "插槽功能，可以引入自定义的组件，<template slot=\"blank\" slot-scope=\"scope\">xxx;slotname=blank是内部编码</template>",
+      "name": "插槽",
+      "icon": "code",
+      "options": {
+        "defaultType": "String"
+      }
+    },
+    {
+      "type": "custom",
+      "name": "定制化",
+      "icon": "chalkboard",
+      "options": {
+        "placeholder": "",
+        "defaultValue": null,
+        "componentName": "el-input",
+        "formula": ""
+      }
+    },
+    {
+      "componentName": "fm-front-end-view",
+      "type": "custom",
+      "name": "前端显示值",
+      "hideTitle": true,
+      "icon": "chalkboard",
+      "options": {
+        "placeholder": "",
+        "defaultValue": null,
+        "componentName": "fm-front-end-view",
+        "formula": ""
+      }
+    },
+    {
+      "type": "table",
+      "name": "表格",
+      "icon": "table",
+      "options": {
+        "defaultValue": [],
+        "disabled": false,
+        "required": false,
+        "width": "",
+        "tableset": [],
+        "table_edit": true,
+        "table_add": true,
+        "table_delete": true,
+        "table_row_create": [],
+        "table_row_update": []
+      }
+    },
+    {
+      "componentName": "fm-chose-china-area",
+      "type": "custom",
+      "name": "城市选择器",
+      "icon": "city",
+      "options": {
+        "placeholder": "",
+        "defaultValue": {
+          "provinceName": null,
+          "cityName": null,
+          "regionName": null,
+          "provinceCode": null,
+          "cityCode": null,
+          "regionCode": null
+        },
+        "componentName": "fm-chose-china-area",
+        "chinaareaset": {
+          "provinceDisabled": false,
+          "cityDisabled": false,
+          "regionDisabled": false,
+          "showCity": true,
+          "showRegion": true
+        },
+        "width": 100,
+        "disabled": false
+      },
+      "blacklist": [
+        "componentName"
+      ]
+    },
+    {
+      "componentName": "fm-ele-auto-complete-sample",
+      "componentSet": "fm-ele-auto-complete-sample-set",
+      "type": "custom",
+      "name": "自动完成输入框",
+      "icon": "text-field",
+      "options": {
+        "placeholder": "",
+        "defaultValue": null,
+        "componentName": "fm-ele-auto-complete-sample",
+        "eleautocompletesampleset": {
+          "remoteUrlAlias": "",
+          "remoteUrl": "",
+          "props": {
+            "value": "value",
+            "label": "label"
+          }
+        },
+        "width": "100%",
+        "disabled": false
+      },
+      "blacklist": [
+        "componentName"
+      ]
+    },
+    {
+      "componentName": "fm-ele-cascader",
+      "componentSet": "fm-ele-cascader-set",
+      "type": "custom",
+      "name": "级联",
+      "icon": "chalkboard",
+      "options": {
+        "placeholder": "",
+        "defaultValue": [],
+        "componentName": "fm-ele-cascader",
+        "cascader_set": {
+          "show-all-levels": true,
+          "collapse-tags": false,
+          "separator": "/",
+          "filterable": true,
+          "expandTrigger": "hover",
+          "multiple": false,
+          "checkStrictly":false
+        },
+        "clearable": true,
+        "disabled": false,
+
+        "showLabel":false,
+        "options":[],
+        "sourceType": "json",
+        "remoteUrlAlias": null,
+        "jsonOptions": [],
+        "remoteOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label",
+          "children": "children",
+          "data": "{}"
+        },
+        "remoteFunc": ""
+      },
+      "blacklist": [
+        "componentName",
+        "showLabel"
+      ]
+    },
+    {
+      "componentName": "fm-ele-auto-complete-sample",
+      "type": "custom",
+      "name": "输入推荐",
+      "icon": "chalkboard",
+      "options": {
+        "placeholder": "",
+        "defaultValue": [],
+        "componentName": "fm-ele-auto-complete-sample",
+
+        "clearable": true,
+        "disabled": false,
+
+        "showLabel":false,
+        "options":[],
+        "sourceType": "json",
+        "remoteUrlAlias": null,
+        "jsonOptions": [],
+        "remoteOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label",
+          "children": "children",
+          "data": "{}"
+        },
+        "remoteFunc": ""
+      },
+      "blacklist": [
+        "componentName"
+      ]
+    }
+  ],
+  "layoutComponents": null,
+  "basicComponents": null,
+  "is_advanced": true,
+  "components_url": "components/dist/js/",
+  "mobile_test_url": "form-generater-mobile.html",
+  "ace_formula_url": "lib/mode-custom-bibao.js",
+  "tinymce_language_url": "lib/tinymce/zh_CN.js",
+  "form": {
+    "customlist": [
+      {
+        "usedplaces": [
+          "form"
+        ],
+        "n": "测试el-input",
+        "v": "el-input"
+      },
+      {
+        "usedplaces": [
+          "form"
+        ],
+        "n": "城市选择器",
+        "v": "fm-chose-china-area",
+        "set": {
+          "componentName": "fm-chose-china-area",
+          "type": "custom",
+          "name": "城市选择器",
+          "icon": "city",
+          "options": {
+            "placeholder": "",
+            "defaultValue": {
+              "provinceName": null,
+              "cityName": null,
+              "regionName": null,
+              "provinceCode": null,
+              "cityCode": null,
+              "regionCode": null
+            },
+            "componentName": "fm-chose-china-area",
+            "chinaareaset": {
+              "provinceDisabled": false,
+              "cityDisabled": false,
+              "regionDisabled": false,
+              "showCity": true,
+              "showRegion": true
+            },
+            "width": 100,
+            "disabled": false
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "自动完成输入框",
+        "v": "fm-ele-auto-complete-sample",
+        "set": {
+          "componentName": "fm-ele-auto-complete-sample",
+          "componentSet": "fm-ele-auto-complete-sample-set",
+          "type": "custom",
+          "name": "自动完成输入框",
+          "icon": "text-field",
+          "options": {
+            "placeholder": "",
+            "defaultValue": null,
+            "componentName": "fm-ele-auto-complete-sample",
+            "eleautocompletesampleset": {
+              "remoteUrlAlias": "",
+              "remoteUrl": "",
+              "props": {
+                "value": "value",
+                "label": "label"
+              }
+            },
+            "width": "100%",
+            "disabled": false
+          }
+        }
+      },
+
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "部门选择器(长)(单选)(可联动)",
+        "v": "fm-chose-dept-select-tree-deptid",
+        "set": {
+          "tooltip": "选部门(长)(单选)；显示值效果：xx子公司-xx部门-xx部门（可联动）",
+          "componentName": "fm-chose-dept-select-tree-deptid",
+          "type": "custom",
+          "name": "选部门(长)(单选)",
+          "icon": "sitemap",
+          "options": {
+            "width": "100%",
+            "defaultValue": null,
+            "placeholder": "请选择部门",
+            "componentName": "fm-chose-dept-select-tree-deptid"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "部门选择器(单选)(可联动)",
+        "v": "fm-chose-dept-select-deptid",
+        "set": {
+          "tooltip": "选部门(单选)；显示值效果：xx部门（可联动）",
+          "componentName": "fm-chose-dept-select-deptid",
+          "type": "custom",
+          "name": "选部门(单选)",
+          "icon": "sitemap",
+          "options": {
+            "width": null,
+            "defaultValue": null,
+            "placeholder": "请选择部门",
+            "componentName": "fm-chose-dept-select-deptid"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "部门选择器(多选)(可联动)",
+        "v": "fm-chose-depts-select-nametree-deptid",
+        "set": {
+          "tooltip": "选部门(多选)；显示值效果：集团公司-信息中心，集团公司-总裁办（可联动）",
+          "componentName": "fm-chose-depts-select-nametree-deptid",
+          "type": "custom",
+          "name": "选部门(多选)",
+          "icon": "sitemap",
+          "options": {
+            "defaultValue": [],
+            "width": "100%",
+            "placeholder": "请选择部门",
+            "componentName": "fm-chose-depts-select-nametree-deptid"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "人员选择器(树状)(单选)(可联动)",
+        "v": "fm-chose-user-treeselect-userid-name-deptid",
+        "set": {
+          "tooltip": "选人员(树状)(单选)；显示值效果：信息中心-李四（可表单联动）(同时包含部门信息)",
+          "componentName": "fm-chose-user-treeselect-userid-name-deptid",
+          "type": "custom",
+          "name": "选人员(树状)(单选)",
+          "icon": "user",
+          "options": {
+            "defaultValue": [],
+            "width": null,
+            "placeholder": "请选择人员",
+            "componentName": "fm-chose-user-treeselect-userid-name-deptid"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "人员选择器(树状)(多选)(可联动)",
+        "v": "fm-chose-users-treeselect-userid-name-deptid",
+        "set": {
+          "tooltip": "选人员(树状)(多选)；显示值效果：信息中心-李四，信息部门-张三（可联动）(同时包含部门信息)",
+          "componentName": "fm-chose-users-treeselect-userid-name-deptid",
+          "type": "custom",
+          "name": "选人员(树状)(多选)",
+          "icon": "users",
+          "options": {
+            "defaultValue": [],
+            "width": null,
+            "placeholder": "请选择人员",
+            "componentName": "fm-chose-users-treeselect-userid-name-deptid"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "人员选择器(带工号)(单选)(可联动)",
+        "v": "fm-chose-user-select-userid-name",
+        "set": {
+          "tooltip": "选人员(带工号,单选)；显示值效果：张三(100011) 格式是名称(工号)--（可联动）",
+          "componentName": "fm-chose-user-select-userid-name",
+          "type": "custom",
+          "name": "选人员(带工号,单选)",
+          "icon": "user",
+          "options": {
+            "defaultValue": [],
+            "width": null,
+            "placeholder": "请选择人员",
+            "componentName": "fm-chose-user-select-userid-name"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "人员选择器(带工号)(多选)(可联动)",
+        "v": "fm-chose-users-select-userid-name",
+        "set": {
+          "tooltip": "选人员(带工号,多选)；显示值效果：张三(100012)，李四(19923),格式是员工名(工号)（可联动）",
+          "componentName": "fm-chose-users-select-userid-name",
+          "type": "custom",
+          "name": "选人员(带工号,多选)",
+          "icon": "users",
+          "options": {
+            "defaultValue": [],
+            "width": null,
+            "placeholder": "请选择人员",
+            "componentName": "fm-chose-users-select-userid-name"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "通讯录选择器(可联动)",
+        "v": "fm-chose-contact",
+        "set": {
+          "componentName": "fm-chose-contact",
+          "type": "custom",
+          "name": "通讯录选择器",
+          "icon": "address-book",
+          "options": {
+            "width": null,
+            "defaultValue": null,
+            "placeholder": "请选择联系人",
+            "componentName": "fm-chose-contact"
+          }
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "级联",
+        "v": "fm-ele-cascader",
+        "set": {
+          "componentName": "fm-ele-cascader",
+          "componentSet": "fm-ele-cascader-set",
+          "type": "custom",
+          "name": "级联",
+          "icon": "chalkboard",
+          "options": {
+            "placeholder": "",
+            "defaultValue": [],
+            "componentName": "fm-ele-cascader",
+            "cascader_set": {
+              "show-all-levels": true,
+              "collapse-tags": false,
+              "separator": "/",
+              "filterable": true,
+              "expandTrigger": "hover",
+              "multiple": false,
+              "checkStrictly":false
+            },
+            "clearable": true,
+            "disabled": false,
+
+            "showLabel":false,
+            "options":[],
+            "sourceType": "json",
+            "remoteUrlAlias": null,
+            "jsonOptions": [],
+            "remoteOptions": [],
+            "props": {
+              "value": "value",
+              "label": "label",
+              "children": "children"
+            },
+            "remoteFunc": ""
+          },
+          "blacklist": [
+            "showLabel"
+          ]
+        }
+      },
+      {
+        "usedplaces": [
+          "form",
+          "table"
+        ],
+        "n": "输入推荐",
+        "v": "fm-ele-auto-complete-sample",
+        "set": {
+          "componentName": "fm-ele-auto-complete-sample",
+          "type": "custom",
+          "name": "输入推荐",
+          "icon": "chalkboard",
+          "options": {
+            "placeholder": "",
+            "defaultValue": [],
+            "componentName": "fm-ele-auto-complete-sample",
+
+            "clearable": true,
+            "disabled": false,
+
+            "showLabel":false,
+            "options":[],
+            "sourceType": "json",
+            "remoteUrlAlias": null,
+            "jsonOptions": [],
+            "remoteOptions": [],
+            "props": {
+              "value": "value",
+              "label": "label",
+              "children": "children",
+              "data": "{}"
+            },
+            "remoteFunc": ""
+          },
+          "blacklist": [
+            "componentName"
+          ]
+        }
+      }
+    ],
+    "defaultValue_format": [
+      {
+        "_id": {
+          "$oid": "61cec2fb8494ef003d3b82e4"
+        },
+        "name": "当前时间{年-月-日}",
+        "value": "${timeformat:YYYY-MM-DD}",
+        "desc": "示例数据：2022-10-26",
+        "components": [
+          "input",
+          "textarea",
+          "time",
+          "date",
+          "text",
+          "datetime",
+          "fm-tinymce"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cec34f0a84c7ac46182419"
+        },
+        "name": "当前时间{年-月-日 时:分:秒}",
+        "value": "${timeformat:YYYY-MM-DD HH:mm:ss}",
+        "desc": "示例数据：2022-10-26 19:19:12",
+        "components": [
+          "input",
+          "textarea",
+          "time",
+          "date",
+          "text",
+          "datetime",
+          "fm-tinymce"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cec3750a84c7ac4618241a"
+        },
+        "name": "当前时间{时:分:秒}",
+        "value": "${timeformat:HH:mm:ss}",
+        "desc": "示例数据：19:19:12",
+        "components": [
+          "input",
+          "textarea",
+          "time",
+          "text",
+          "datetime",
+          "fm-tinymce"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cec3a88494ef003d3b82e5"
+        },
+        "name": "当前流程文号",
+        "value": "${now-flow-workname}",
+        "desc": "示例数据：20211021105943026<br>注意：创建节点是没有文号的，务必在创建节点设置成不可填状态",
+        "components": [
+          "input",
+          "textarea",
+          "text"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cec58a8494ef003e723b84"
+        },
+        "name": "填写者-人员选择器(字符串)",
+        "value": "${chose-user-str}",
+        "desc": "示例数据:张三(1010203);名字加工号模式",
+        "components": [
+          "input",
+          "textarea",
+          "text"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cec5b18494ef003e723b85"
+        },
+        "name": "填写者-部门选择器(字符串)",
+        "value": "${chose-dept-str}",
+        "desc": "示例数据：信息部",
+        "components": [
+          "input",
+          "textarea",
+          "text"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cec5e88494ef003e723b86"
+        },
+        "name": "填写者-部门树选择器(字符串)[排除集团公司]",
+        "value": "${chose-dept-tree-str-exclude:集团公司}",
+        "desc": "示例数据：信息部-sap开发组",
+        "components": [
+          "input",
+          "textarea",
+          "text"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cf22e08494ef003c16f99e"
+        },
+        "name": "填写者姓名部门信息",
+        "value": "${chose-user-treeselect-userid-deptid}",
+        "desc": null,
+        "components": [
+          "fm-chose-user-treeselect-userid-name-deptid",
+          "fm-chose-users-treeselect-userid-name-deptid"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61cf25218494ef003c16f99f"
+        },
+        "name": "填写者姓名信息",
+        "value": "${chose-user-select-userid}",
+        "desc": null,
+        "components": [
+          "fm-chose-user-select-userid-name",
+          "fm-chose-users-select-userid-name"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61d061588494ef004163d952"
+        },
+        "name": "填写者部门信息",
+        "value": "${chose-dept-deptid}",
+        "desc": null,
+        "components": [
+          "fm-chose-dept-select-tree-deptid",
+          "fm-chose-dept-select-deptid"
+        ]
+      },
+      {
+        "_id": {
+          "$oid": "61d062fe8494ef003f0362a2"
+        },
+        "name": "填写者部门信息",
+        "value": "${chose-depts-nametree-deptid}",
+        "desc": null,
+        "components": [
+          "fm-chose-depts-select-nametree-deptid"
+        ]
+      }
+    ],
+    "funlist": [
+      {
+        "name": "简单进销存商品",
+        "prefix": "",
+        "api": "",
+        "fields": [
+          {
+            "name": "商品名",
+            "value": "name"
+          },
+          {
+            "name": "条形码",
+            "value": "barcode"
+          },
+          {
+            "name": "生产厂家",
+            "value": "producer"
+          },
+          {
+            "name": "简称",
+            "value": "nameforshort"
+          },
+          {
+            "name": "价格",
+            "value": "price"
+          },
+          {
+            "name": "成本",
+            "value": "cost"
+          }
+        ],
+        "funlist": [
+          {
+            "placeholder": "转换[简单进销存]的商品字段，第一个参数是商品id，第二个参数是要转换的字段，使用方式实例：#[转为简单进销存商品字段](@[商品ID],商品名)",
+            "funname": "转为简单进销存商品字段",
+            "fun": "trans_samplejxc_by_wareid",
+            "frontfun": "uri_merge_para0"
+          }
+        ]
+      }
+    ],
+    "localfun": [
+      {
+        "placeholder": "百分比转换成数字,参数1为要转换的带有%的字符串，比如12.12%会转换0.1212",
+        "funname": "百分比转数字",
+        "funeval": "(paras)=>{\n                    console.log(paras);\n                    if((paras[0]+'').indexOf('%')!=-1){\n                        paras[0]=paras[0].replace(\"%\",\"\");\n                        paras[0]=paras[0]/100;\n                    }\n                    return paras[0];\n                }"
+      },
+      {
+        "placeholder": "将输入的数据四舍五入后保留N位数，默认保留2位。参数1是要转换的数据，参数2是保留的位数，默认是2",
+        "funname": "四舍五入保留小数",
+        "funeval": "(paras)=>{\n                    console.log('paras',paras)\n                    \n                    let num = Number(eval(paras[0])).toFixed(paras.length>1?paras[1]:2)\n    \t\t        return num;\n                }"
+      }
+    ],
+    "remoteurl": "http://localhost:8095/api/oa/form/remote_func/",
+    "remotefun": [
+      {
+        "usedscope": [
+          "EleAutoCompleteSample"
+        ],
+        "p": "",
+        "n": "测试",
+        "v": "test",
+        "props": {
+          "method": "post",
+          "value": "value",
+          "label": "label",
+          "children": "children"
+        }
+      },
+      {
+        "usedscope": [
+          "DataSourceAdmin"
+        ],
+        "n": "简单进销存-仓库列表",
+        "v": "sample-depots",
+        "props": {
+          "method": "post",
+          "value": "value",
+          "label": "label",
+          "children": "children"
+        }
+      },
+      {
+        "usedscope": [
+          "EleAutoCompleteSample"
+        ],
+        "p": "输入商品名称，拼音，拼音首字母获取商品编码",
+        "n": "简单进销存-商品编码",
+        "v": "sample-wareid",
+        "props": {
+          "method": "post",
+          "value": "value",
+          "label": "label"
+        }
+      }
+    ]
+  },
+  "table": {
+    "funlist": [
+      {
+        "name": "简单进销存商品",
+        "prefix": "",
+        "api": "",
+        "fields": [
+          {
+            "name": "商品名",
+            "value": "name"
+          },
+          {
+            "name": "条形码",
+            "value": "barcode"
+          },
+          {
+            "name": "生产厂家",
+            "value": "producer"
+          },
+          {
+            "name": "简称",
+            "value": "nameforshort"
+          },
+          {
+            "name": "价格",
+            "value": "price"
+          },
+          {
+            "name": "成本",
+            "value": "cost"
+          }
+        ],
+        "funlist": [
+          {
+            "placeholder": "转换[简单进销存]的商品字段，第一个参数是商品id，第二个参数是要转换的字段，使用方式实例：#[转为简单进销存商品字段](@[商品ID],商品名)",
+            "funname": "转为简单进销存商品字段",
+            "fun": "trans_samplejxc_by_wareid",
+            "frontfun": "uri_merge_para0"
+          }
+        ]
+      }
+    ],
+    "localfun": [
+      {
+        "placeholder": "百分比转换成数字,参数1为要转换的带有%的字符串，比如12.12%会转换0.1212",
+        "funname": "百分比转数字",
+        "funeval": "(paras)=>{\n                    console.log(paras);\n                    if((paras[0]+'').indexOf('%')!=-1){\n                        paras[0]=paras[0].replace(\"%\",\"\");\n                        paras[0]=paras[0]/100;\n                    }\n                    return paras[0];\n                }"
+      },
+      {
+        "placeholder": "将输入的数据四舍五入后保留N位数，默认保留2位。参数1是要转换的数据，参数2是保留的位数，默认是2",
+        "funname": "四舍五入保留小数",
+        "funeval": "(paras)=>{\n                    console.log('paras',paras)\n                    \n                    let num = Number(eval(paras[0])).toFixed(paras.length>1?paras[1]:2)\n    \t\t        return num;\n                }"
+      }
+    ],
+    "remoteurl": "http://localhost:8095/api/oa/form/remote_func/",
+    "remotefun": [
+      {
+        "usedscope": [
+          "EleAutoCompleteSample"
+        ],
+        "p": "",
+        "n": "测试",
+        "v": "test",
+        "props": {
+          "method": "post",
+          "value": "value",
+          "label": "label",
+          "children": "children"
+        }
+      },
+      {
+        "usedscope": [
+          "DataSourceAdmin"
+        ],
+        "n": "简单进销存-仓库列表",
+        "v": "sample-depots",
+        "props": {
+          "method": "post",
+          "value": "value",
+          "label": "label",
+          "children": "children"
+        }
+      },
+      {
+        "usedscope": [
+          "EleAutoCompleteSample"
+        ],
+        "p": "输入商品名称，拼音，拼音首字母获取商品编码",
+        "n": "简单进销存-商品编码",
+        "v": "sample-wareid",
+        "props": {
+          "method": "post",
+          "value": "value",
+          "label": "label"
+        }
+      }
+    ]
+  }
+}

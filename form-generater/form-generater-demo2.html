@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+
+    <link rel="stylesheet" href="lib/FormMaking.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.13/theme-chalk/index.css">
+
+    <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://cdn.staticfile.org/element-ui/2.15.13/index.js"></script>
+
+    <script src="https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js"></script>
+
+    <script src="lib/FormMaking.umd.min.js"></script>
+
+
+    <script src="https://cdn.staticfile.org/prism/9000.0.1/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/prism/9000.0.1/themes/prism.min.css">
+
+
+</head>
+<body>
+
+
+<div id="app" style="margin: 10px;">
+
+    <div style="margin: 10px">
+        <div v-if="show" style="border: #0c4128 solid 1px;
+    padding: 10px;">
+<!--            {{widgetModels}}-->
+            <fm-generate-form ref="generateForm" :data="widgetForm" :remote="remoteFuncs" v-model="widgetModels">
+            </fm-generate-form>
+        </div>
+    </div>
+
+    <div style="margin: 10px;">
+
+        <el-button type="success" @click="button1">验证并获取表单数据</el-button>
+        <el-button type="primary" @click="button2">直接获取表单数据</el-button>
+        <el-button type="info" @click="button3">使用下面的徐凤年数据填充</el-button>
+
+        <!--        <el-button >成功按钮</el-button>-->
+        <!--        <el-button type="info">信息按钮</el-button>-->
+        <!--        <el-button type="warning">警告按钮</el-button>-->
+        <!--        <el-button type="danger">危险按钮</el-button>-->
+    </div>
+
+
+    <div>
+
+    </div>
+
+
+    <el-dialog v-if="formdialog.Visible"
+               :title="formdialog.title"
+               :visible.sync="formdialog.Visible"
+               width="75%">
+        <el-input autosize type="textarea" v-model="formdialog.text"></el-input>
+        <span slot="footer" class="dialog-footer">
+    <el-button @click="formdialog.Visible = false">取 消</el-button>
+  </span>
+    </el-dialog>
+
+    <div v-html="innerHTML">
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+<script>
+
+    window.baseURL = '';
+    window.form_set_api = window.baseURL + "form_set.json";
+    window.callback_default_api = window.baseURL + 'api/oa/tablefun/callback';
+
+
+    new Vue({
+        el: '#app',
+        components: {},
+        data: function () {
+            return {
+                show:true,
+                widgetModels: {},//初始化数据
+                remoteFuncs: {},//本地函数
+                widgetForm: {
+                    "list": [
+                        {
+                            "tooltip": "单行文本-字符显示",
+                            "type": "input",
+                            "componentName": "el-input",
+                            "name": "姓名",
+                            "icon": "text-field",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": true,
+                                "dataType": "",
+                                "pattern": "",
+                                "placeholder": "",
+                                "formula": "",
+                                "remoteFunc": "func_1686125232000_48849"
+                            },
+                            "key": "1686125232000_48849",
+                            "keyindex": 2,
+                            "model": "input_1686125232000_48849",
+                            "hideTitle": false,
+                            "labelWidth": null,
+                            "style": null,
+                            "hide": false,
+                            "inner_set_json": {},
+                            "rules": [
+                                {
+                                    "required": true,
+                                    "message": "姓名必须填写"
+                                }
+                            ]
+                        },
+                        {
+                            "tooltip": "单行文本-字符显示",
+                            "type": "input",
+                            "componentName": "el-input",
+                            "name": "手机号码",
+                            "icon": "text-field",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "",
+                                "pattern": "",
+                                "placeholder": "",
+                                "formula": "",
+                                "remoteFunc": "func_1686125240000_51275"
+                            },
+                            "key": "1686125240000_51275",
+                            "keyindex": 3,
+                            "model": "input_1686125240000_51275",
+                            "hideTitle": false,
+                            "labelWidth": null,
+                            "style": null,
+                            "hide": false,
+                            "inner_set_json": {},
+                            "rules": []
+                        },
+                        {
+                            "type": "table",
+                            "name": "工作经历",
+                            "icon": "table",
+                            "options": {
+                                "defaultValue": [],
+                                "disabled": false,
+                                "required": false,
+                                "width": "",
+                                "tableset": [
+                                    {
+                                        "code": "y1I7d",
+                                        "inner_set_json": {},
+                                        "name": "时间",
+                                        "placeholder": null,
+                                        "width": null,
+                                        "editer": "text",
+                                        "editer_component": null,
+                                        "editer_config": null,
+                                        "defaultValue": null,
+                                        "aggregate": null,
+                                        "formula": null,
+                                        "limittype": "canedit",
+                                        "required": true,
+                                        "datasourceType": "normal",
+                                        "datasource": null,
+                                        "datasourceAdvanced": {
+                                            "sourceType": "options",
+                                            "remoteUrlAlias": null,
+                                            "remoteOptions": [],
+                                            "jsonOptions": [],
+                                            "options": [
+                                                {
+                                                    "value": "选项1",
+                                                    "label": "选项1"
+                                                },
+                                                {
+                                                    "value": "选项2",
+                                                    "label": "选项2"
+                                                },
+                                                {
+                                                    "value": "选项3",
+                                                    "label": "选项3"
+                                                }
+                                            ],
+                                            "props": {
+                                                "value": "value",
+                                                "label": "label"
+                                            },
+                                            "remoteFunc": "",
+                                            "showLabel": false
+                                        },
+                                        "matchCol": [],
+                                        "matchFun": []
+                                    },
+                                    {
+                                        "code": "zeK58",
+                                        "inner_set_json": {},
+                                        "name": "工作经历",
+                                        "placeholder": null,
+                                        "width": null,
+                                        "editer": "text",
+                                        "editer_component": null,
+                                        "editer_config": null,
+                                        "defaultValue": null,
+                                        "aggregate": null,
+                                        "formula": null,
+                                        "limittype": "canedit",
+                                        "required": true,
+                                        "datasourceType": "normal",
+                                        "datasource": null,
+                                        "datasourceAdvanced": {
+                                            "sourceType": "options",
+                                            "remoteUrlAlias": null,
+                                            "remoteOptions": [],
+                                            "jsonOptions": [],
+                                            "options": [
+                                                {
+                                                    "value": "选项1",
+                                                    "label": "选项1"
+                                                },
+                                                {
+                                                    "value": "选项2",
+                                                    "label": "选项2"
+                                                },
+                                                {
+                                                    "value": "选项3",
+                                                    "label": "选项3"
+                                                }
+                                            ],
+                                            "props": {
+                                                "value": "value",
+                                                "label": "label"
+                                            },
+                                            "remoteFunc": "",
+                                            "showLabel": false
+                                        },
+                                        "matchCol": [],
+                                        "matchFun": []
+                                    }
+                                ],
+                                "table_edit": true,
+                                "table_add": true,
+                                "table_delete": true,
+                                "table_row_create": [],
+                                "table_row_update": [],
+                                "remoteFunc": "func_1686125253000_15191"
+                            },
+                            "key": "1686125253000_15191",
+                            "keyindex": 4,
+                            "model": "table_1686125253000_15191",
+                            "hideTitle": false,
+                            "labelWidth": null,
+                            "style": null,
+                            "hide": false,
+                            "inner_set_json": {},
+                            "rules": []
+                        },
+                        {
+                            "type": "table",
+                            "name": "家庭关系",
+                            "icon": "table",
+                            "options": {
+                                "defaultValue": [],
+                                "disabled": false,
+                                "required": false,
+                                "width": "",
+                                "tableset": [
+                                    {
+                                        "code": "nX5Aw",
+                                        "inner_set_json": {},
+                                        "name": "关系",
+                                        "placeholder": null,
+                                        "width": null,
+                                        "editer": "text",
+                                        "editer_component": null,
+                                        "editer_config": null,
+                                        "defaultValue": null,
+                                        "aggregate": null,
+                                        "formula": null,
+                                        "limittype": "canedit",
+                                        "required": true,
+                                        "datasourceType": "normal",
+                                        "datasource": null,
+                                        "datasourceAdvanced": {
+                                            "sourceType": "options",
+                                            "remoteUrlAlias": null,
+                                            "remoteOptions": [],
+                                            "jsonOptions": [],
+                                            "options": [
+                                                {
+                                                    "value": "选项1",
+                                                    "label": "选项1"
+                                                },
+                                                {
+                                                    "value": "选项2",
+                                                    "label": "选项2"
+                                                },
+                                                {
+                                                    "value": "选项3",
+                                                    "label": "选项3"
+                                                }
+                                            ],
+                                            "props": {
+                                                "value": "value",
+                                                "label": "label"
+                                            },
+                                            "remoteFunc": "",
+                                            "showLabel": false
+                                        },
+                                        "matchCol": [],
+                                        "matchFun": []
+                                    },
+                                    {
+                                        "code": "ACZYm",
+                                        "inner_set_json": {},
+                                        "name": "姓名",
+                                        "placeholder": null,
+                                        "width": null,
+                                        "editer": "text",
+                                        "editer_component": null,
+                                        "editer_config": null,
+                                        "defaultValue": null,
+                                        "aggregate": null,
+                                        "formula": null,
+                                        "limittype": "canedit",
+                                        "required": true,
+                                        "datasourceType": "normal",
+                                        "datasource": null,
+                                        "datasourceAdvanced": {
+                                            "sourceType": "options",
+                                            "remoteUrlAlias": null,
+                                            "remoteOptions": [],
+                                            "jsonOptions": [],
+                                            "options": [
+                                                {
+                                                    "value": "选项1",
+                                                    "label": "选项1"
+                                                },
+                                                {
+                                                    "value": "选项2",
+                                                    "label": "选项2"
+                                                },
+                                                {
+                                                    "value": "选项3",
+                                                    "label": "选项3"
+                                                }
+                                            ],
+                                            "props": {
+                                                "value": "value",
+                                                "label": "label"
+                                            },
+                                            "remoteFunc": "",
+                                            "showLabel": false
+                                        },
+                                        "matchCol": [],
+                                        "matchFun": []
+                                    },
+                                    {
+                                        "code": "zyOTb",
+                                        "inner_set_json": {},
+                                        "name": "手机号码",
+                                        "placeholder": null,
+                                        "width": null,
+                                        "editer": "text",
+                                        "editer_component": null,
+                                        "editer_config": null,
+                                        "defaultValue": null,
+                                        "aggregate": null,
+                                        "formula": null,
+                                        "limittype": "canedit",
+                                        "required": false,
+                                        "datasourceType": "normal",
+                                        "datasource": null,
+                                        "datasourceAdvanced": {
+                                            "sourceType": "options",
+                                            "remoteUrlAlias": null,
+                                            "remoteOptions": [],
+                                            "jsonOptions": [],
+                                            "options": [
+                                                {
+                                                    "value": "选项1",
+                                                    "label": "选项1"
+                                                },
+                                                {
+                                                    "value": "选项2",
+                                                    "label": "选项2"
+                                                },
+                                                {
+                                                    "value": "选项3",
+                                                    "label": "选项3"
+                                                }
+                                            ],
+                                            "props": {
+                                                "value": "value",
+                                                "label": "label"
+                                            },
+                                            "remoteFunc": "",
+                                            "showLabel": false
+                                        },
+                                        "matchCol": [],
+                                        "matchFun": []
+                                    }
+                                ],
+                                "table_edit": true,
+                                "table_add": true,
+                                "table_delete": true,
+                                "table_row_create": [],
+                                "table_row_update": [],
+                                "remoteFunc": "func_1686125355000_35189"
+                            },
+                            "key": "1686125355000_35189",
+                            "keyindex": 5,
+                            "model": "table_1686125355000_35189",
+                            "hideTitle": false,
+                            "labelWidth": null,
+                            "style": null,
+                            "hide": false,
+                            "inner_set_json": {},
+                            "rules": []
+                        }
+                    ],
+                    "remove_list": [
+                        {
+                            "type": "placeholderhtml",
+                            "componentName": "",
+                            "inner_set_json": {},
+                            "name": "静态文本",
+                            "icon": "code",
+                            "style": "margin: 10px 0;",
+                            "options": {
+                                "width": "100%",
+                                "height": "",
+                                "placeholderhtml": "静态文本",
+                                "remoteFunc": "func_1686125226000_86756"
+                            },
+                            "rules": [],
+                            "key": "1686125226000_86756",
+                            "keyindex": 1,
+                            "model": "placeholderhtml_1686125226000_86756",
+                            "hideTitle": false,
+                            "labelWidth": null,
+                            "hide": false
+                        }
+                    ],
+                    "config": {
+                        "labelWidth": 100,
+                        "labelPosition": "top",
+                        "xs_config": {
+                            "labelWidth": 180,
+                            "labelPosition": "top",
+                            "size": "medium",
+                            "rowMax": 1
+                        },
+                        "sm_config": {
+                            "labelWidth": 180,
+                            "labelPosition": "top",
+                            "size": "small",
+                            "rowMax": 2
+                        }
+                    }
+                },
+                formdialog: {Visible: false, title: '标题', text: ''},
+                innerHTML: null,
+            }
+        },
+        mounted() {
+
+            const code = `
+//实例化
+ <fm-generate-form ref="generateForm" :data="widgetForm" :remote="remoteFuncs" v-model="widgetModels">
+ </fm-generate-form>
+//:data="widgetForm" 表单设置
+//:remote="remoteFuncs" 远程函数（获取数据用）
+//v-model="widgetModels" 初始化参数；传入用，传出不好使，获取数据用下面的.getData方法
+
+// 按键1实例代码：
+this.$refs.generateForm.getData()
+.then((res) => {
+    this.formdialog={
+        Visible:true,
+        title:'this.$refs.generateForm.getData查看获取到的数据',
+        text:JSON.stringify(res,null,4)
+    }
+}).catch(e => {
+    console.log(e)
+    this.$message.error('有需求信息没有填写')
+})
+
+// 按键2实例代码：
+var res= this.$refs.generateForm.getDataWithOutValid()
+this.formdialog={
+    Visible:true,
+    title:'this.$refs.generateForm.getDataWithOutValid查看获取到的数据',
+    text:JSON.stringify(res,null,4)
+}
+
+//如果有隐藏元素，上面两个函数是无法获取隐藏的值的。如果需要获取的话，加入参数；this.$refs.generateForm.getData(true)来获取全部
+
+//获取到的数据介绍：
+{
+    //映射数据；真实数据。用于展示下次编辑使用
+    "models": {
+        "input_1686125232000_48849": "徐凤年",
+        "input_1686125240000_51275": "1998xxx",
+        "table_1686125253000_15191": [
+            {
+                "y1I7d": "2019-01-01",
+                "zeK58": "玩",
+                "_c_at": 1686187030,
+                "_u_at": 1686187053
+            }
+        ],
+        "table_1686125355000_35189": [
+            {
+                "nX5Aw": "父亲",
+                "ACZYm": "徐晓",
+                "zyOTb": "11",
+                "_c_at": 1686187054,
+                "_u_at": 1686187065
+            },
+            {
+                "nX5Aw": "弟弟",
+                "ACZYm": "徐龙象",
+                "zyOTb": null,
+                "_c_at": 1686187065,
+                "_u_at": 1686187081
+            }
+        ]
+    },
+    //可视化数据。可以用做快速展示用
+    "showInfos": {
+        "input_1686125232000_48849": {
+            "name": "姓名",
+            "show": "徐凤年"
+        },
+        "input_1686125240000_51275": {
+            "name": "手机号码",
+            "show": "1998xxx"
+        },
+        "table_1686125253000_15191": {
+            "name": "工作经历",
+            "show": {
+                "tablename": [
+                    {
+                        "code": "y1I7d",
+                        "name": "时间"
+                    },
+                    {
+                        "code": "zeK58",
+                        "name": "工作经历"
+                    }
+                ],
+                "data": [
+                    {
+                        "y1I7d": "2019-01-01",
+                        "zeK58": "玩"
+                    }
+                ]
+            }
+        },
+        "table_1686125355000_35189": {
+            "name": "家庭关系",
+            "show": {
+                "tablename": [
+                    {
+                        "code": "nX5Aw",
+                        "name": "关系"
+                    },
+                    {
+                        "code": "ACZYm",
+                        "name": "姓名"
+                    },
+                    {
+                        "code": "zyOTb",
+                        "name": "手机号码"
+                    }
+                ],
+                "data": [
+                    {
+                        "nX5Aw": "父亲",
+                        "ACZYm": "徐晓",
+                        "zyOTb": "11"
+                    },
+                    {
+                        "nX5Aw": "弟弟",
+                        "ACZYm": "徐龙象",
+                        "zyOTb": ""
+                    }
+                ]
+            }
+        }
+    }
+}
+
+//案例3:设置
+this.widgetModels={
+"input_1686125232000_48849": "徐凤年"
+...
+}
+
+`;
+            const highlightedCode = Prism.highlight(code, Prism.languages.javascript, 'javascript');
+
+            console.log(highlightedCode)
+
+            this.innerHTML = `<pre><code class="language-javascript">${highlightedCode}</code></pre>`;
+
+
+        },
+        methods: {
+
+
+            button3(){
+
+                // this.widgetModels={"input_1686125232000_48849": "徐凤年"}
+                this.widgetModels=
+                    {
+                    //映射数据；真实数据。用于展示下次编辑使用
+                        "input_1686125232000_48849": "徐凤年",
+                        "input_1686125240000_51275": "1998xxx",
+                        "table_1686125253000_15191": [
+                            {
+                                "y1I7d": "2019-01-01",
+                                "zeK58": "玩",
+                                "_c_at": 1686187030,
+                                "_u_at": 1686187053
+                            }
+                        ],
+                        "table_1686125355000_35189": [
+                            {
+                                "nX5Aw": "父亲",
+                                "ACZYm": "徐晓",
+                                "zyOTb": "11",
+                                "_c_at": 1686187054,
+                                "_u_at": 1686187065
+                            },
+                            {
+                                "nX5Aw": "弟弟",
+                                "ACZYm": "徐龙象",
+                                "zyOTb": null,
+                                "_c_at": 1686187065,
+                                "_u_at": 1686187081
+                            }
+                        ]
+                };
+
+                // this.show=false;
+                //
+                // setTimeout(()=>{
+                //     this.show=true;
+                // },300)
+
+            },
+
+            button1() {
+
+                this.$refs.generateForm.getData()
+                    .then((res) => {
+                        this.formdialog = {
+                            Visible: true,
+                            title: 'this.$refs.generateForm.getData查看获取到的数据',
+                            text: JSON.stringify(res, null, 4)
+                        }
+                    }).catch(e => {
+                    console.log(e)
+                    this.$message.error('有需求信息没有填写')
+                })
+
+            },
+
+            button2() {
+
+                var res = this.$refs.generateForm.getDataWithOutValid()
+
+                this.formdialog = {
+                    Visible: true,
+                    title: 'this.$refs.generateForm.getDataWithOutValid查看获取到的数据',
+                    text: JSON.stringify(res, null, 4)
+                }
+
+
+            },
+
+            show1() {
+
+            }
+
+
+        }
+    });
+
+
+</script>
+
+<style>
+    .el-dialog__body {
+        padding: 8px 20px;
+    }
+</style>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+
+    <link rel="stylesheet" href="lib/FormMaking.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.13/theme-chalk/index.css">
+
+    <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://cdn.staticfile.org/element-ui/2.15.13/index.js"></script>
+
+    <script src="https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js"></script>
+
+    <script src="lib/FormMaking.umd.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="app">
+
+    <div>
+        <div v-if="!!widgetForm">
+            <fm-generate-form v-if="formshow" status="input" ref="generateForm" :data="widgetForm" :remote="remoteFuncs" :value="widgetModels" class="generateForm">
+
+            </fm-generate-form>
+        </div>
+        <div v-else>
+            配置还未被加载...
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
+<script>
+
+    window.baseURL = '';
+    window.form_set_api=window.baseURL+"form_set.json";
+    window.callback_default_api=window.baseURL+'api/oa/tablefun/callback';
+
+
+    new Vue({
+        el: '#app',
+        components: {
+        },
+        data() {
+            return {
+                remoteFuncs: {},
+                widgetModels: {},
+                widgetForm: null,
+                lastFormJson: '',
+                formshow: false
+            }
+        },
+
+        mounted() {
+
+            //暴露出来
+            window.windowufune5886680cb9 = this.windowufun
+
+        },
+        destroyed() {
+            delete window.windowufune5886680cb9;
+        },
+
+        methods: {
+
+
+            changeGutter(list) {
+
+                for (let i = 0; i < list.length; i++) {
+                    const ele = list[i];
+                    if (ele.type == 'grid' && !!ele.columns) {
+                        ele.options.gutter = 10;
+                        // console.log('gutter',ele.options.gutter);
+                        if (ele.columns.length) {
+                            for (let k = 0; k < ele.columns.length; k++) {
+                                const elek = ele.columns[k];
+                                if (elek.list.length) {
+                                    this.changeGutter(elek.list)
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return null;
+            },
+            copyboject(obj){
+
+                return JSON.parse(JSON.stringify(obj));
+
+            },
+
+            windowufun(widgetForm2, mode) {
+                let widgetForm = this.copyboject(widgetForm2);
+
+                widgetForm.mode = mode;
+
+                if (this.lastFormJson == JSON.stringify(widgetForm)) {
+                    return;
+                } else {
+                    this.lastFormJson=JSON.stringify(widgetForm);
+                    this.changeGutter(widgetForm.list);
+                    if (mode == 'H5') {
+                        widgetForm.config = Object.assign(widgetForm.config, widgetForm.config.xs_config);
+                    } else {
+                        widgetForm.config = Object.assign(widgetForm.config, widgetForm.config.sm_config);
+                    }
+                    // this.widgetForm=null;
+                    this.widgetForm = widgetForm;
+                    this.formshow = false;
+                    setTimeout(() => {
+                        this.formshow = true;
+                    }, 100);
+
+
+                }
+            }
+
+        }
+    });
+
+
+</script>

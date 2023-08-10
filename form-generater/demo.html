@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo展示页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 0.5rem 1rem;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f1f1f1;
+            padding: 1rem 0;
+            border-bottom: 1px solid #121212;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 6rem);
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                flex: 1 1 50%;
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        function loadExample(url) {
+            document.getElementById('demoIframe').src = url;
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>产品功能:<span style="font-size: 14px;"><a href="https://ziqiflow.flycore.cn/" style="color: #0dcaf0">之奇OA</a>表单模块的，可快速开发，生成表单。可视化编辑。</span></h1>
+    <a target="_blank" href="https://github.com/ziqiflow/ziqiflowOA/blob/master/%E5%BC%80%E5%8F%91%E8%80%85%E8%A1%A8%E5%8D%95%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md">github</a>
+</header>
+<div style="background-color: #f1f1f1;padding-left: 10px;padding-top: 10px;"><a  target="_blank" href="https://github.com/ziqiflow/ziqiflowOA/blob/master/%E5%BC%80%E5%8F%91%E8%80%85%E8%A1%A8%E5%8D%95%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md">帮助文档</a></div>
+<nav>
+    <a href="#" onclick="loadExample('form-generater-demo.html')">1.可视化编辑创建表单</a>
+    <a href="#" onclick="loadExample('form-generater-demo2.html')">2.使用表单，获取数据</a>
+    <a href="#" onclick="loadExample('form-generater-demo3.html')">3.查看表单</a>
+<!--    <a href="#" onclick="loadExample('example4.html')">Example 4</a>-->
+<!--    <a href="#" onclick="loadExample('example5.html')">Example 5</a>-->
+<!--    <a href="#" onclick="loadExample('example6.html')">Example 6</a>-->
+<!--    <a href="#" onclick="loadExample('example7.html')">Example 7</a>-->
+<!--    <a href="#" onclick="loadExample('example8.html')">Example 8</a>-->
+<!--    <a href="#" onclick="loadExample('example9.html')">Example 9</a>-->
+<!--    <a href="#" onclick="loadExample('example10.html')">Example 10</a>-->
+</nav>
+<iframe id="demoIframe" src="form-generater-demo.html"></iframe>
+</body>
+</html>
