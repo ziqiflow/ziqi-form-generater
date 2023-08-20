@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+    <link rel="stylesheet" href="lib/FormMaking.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.13/theme-chalk/index.css">
+
+    <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://cdn.staticfile.org/element-ui/2.15.13/index.js"></script>
+
+    <script src="https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js"></script>
+
+    <script src="lib/FormMaking.umd.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="app">
+
+
+
+    <fm-making-form :widget-form.sync='widgetForm'></fm-making-form>
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
+<script>
+
+
+    window.baseURL = '';
+    window.form_set_api=window.baseURL+"form_set.json";
+    window.callback_default_api=window.baseURL+'api/oa/tablefun/callback';
+
+
+    new Vue({
+        el: '#app',
+        components: {
+        },
+        data: function () {
+            return {
+                widgetForm:{
+  "list": [
+    {
+      "type": "placeholderhtml",
+      "core_com": "",
+      "inner_set_json": {},
+      "name": "静态文本",
+      "icon": "code",
+      "style": "margin: 10px 0;",
+      "options": {
+        "width": "100%",
+        "height": "",
+        "placeholderhtml": "<h1>静态文本</h1>\n<p>编辑你想要的任何模式</p>\n<p>&nbsp;</p>\n<p><a href=\"https://ziqiflow.flycore.cn/\" target=\"_blank\" rel=\"noopener\">链接到的我们的主页<img src=\"https://ziqiflow.flycore.cn/assets/images/logo/logo.png\" /></a></p>",
+        "remoteFunc": "func_1692259090000_4784"
+      },
+      "rules": [],
+      "key": "1692259090000_4784",
+      "keyindex": 1,
+      "model": "placeholderhtml_1692259090000_4784",
+      "hideTitle": false,
+      "labelWidth": null,
+      "hide": false
+    },
+    {
+      "type": "divider",
+      "core_com": "el-divider",
+      "name": "分隔符",
+      "icon": "grip-lines",
+      "inner_set_json": [],
+      "options": {
+        "width": "100%",
+        "content_position": "center",
+        "height": "",
+        "dividerhtml": "我是分隔符组件，是不是好看一些了",
+        "remoteFunc": "func_1692259342000_77769"
+      },
+      "key": "1692259342000_77769",
+      "keyindex": 2,
+      "model": "divider_1692259342000_77769",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "rules": []
+    },
+    {
+      "tooltip": "单行文本-字符显示",
+      "type": "input",
+      "core_com": "el-input",
+      "name": "单行文本-输入文本",
+      "icon": "text-field",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "",
+        "pattern": "",
+        "placeholder": "",
+        "formula": "",
+        "remoteFunc": "func_1692259363000_78244",
+        "remoteOptions": []
+      },
+      "key": "1692259363000_78244",
+      "keyindex": 3,
+      "model": "input_1692259363000_78244",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "tooltip": "单行文本-数字-仅仅用于数字的显示",
+      "type": "input",
+      "core_com": "el-input",
+      "name": "单行数字-针对数字的输入",
+      "icon": "number-field",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "number",
+        "pattern": "",
+        "placeholder": "",
+        "formula": "",
+        "remoteFunc": "func_1692329830000_23967",
+        "remoteOptions": []
+      },
+      "blacklist": [
+        "dataType"
+      ],
+      "key": "1692329830000_23967",
+      "keyindex": 4,
+      "model": "input_1692329830000_23967",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": [
+        {
+          "type": "number",
+          "message": "单行数字-针对数字的输入格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "name": "多行文本-支持多行文本输入",
+      "icon": "regular/keyboard",
+      "core_com": "el-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "周杰伦 - 东风破\n\n词：方文山\n\n曲：周杰伦\n\n编曲：林迈可\n\n一盏离愁 孤单伫立在窗口\n\n我在门后 假装你人还没走\n\n旧地如重游 月圆更寂寞\n\n夜半清醒的烛火 不忍苛责我\n\n一壶漂泊 浪迹天涯难入喉\n\n你走之后 酒暖回忆思念瘦",
+        "required": false,
+        "pattern": "",
+        "placeholder": "",
+        "formula": "",
+        "remoteFunc": "func_1692329843000_31521",
+        "remoteOptions": []
+      },
+      "key": "1692329843000_31521",
+      "keyindex": 5,
+      "model": "textarea_1692329843000_31521",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": [],
+      "matchCol": []
+    },
+    {
+      "type": "number",
+      "name": "计数器",
+      "icon": "sort-numeric-up",
+      "core_com": "el-input-number",
+      "options": {
+        "width": "",
+        "required": false,
+        "defaultValue": 0,
+        "min": 0,
+        "max": 0,
+        "step": 1,
+        "disabled": false,
+        "controlsPosition": "",
+        "formula": "",
+        "remoteFunc": "func_1692329927000_58414",
+        "remoteOptions": []
+      },
+      "key": "1692329927000_58414",
+      "keyindex": 6,
+      "model": "number_1692329927000_58414",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "divider",
+      "core_com": "el-divider",
+      "name": "分隔符",
+      "icon": "grip-lines",
+      "inner_set_json": [],
+      "options": {
+        "width": "100%",
+        "content_position": "center",
+        "height": "",
+        "dividerhtml": "单选框组",
+        "remoteFunc": "func_1692342253000_6850"
+      },
+      "key": "1692342253000_6850",
+      "keyindex": 21,
+      "model": "divider_1692342253000_6850",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "rules": []
+    },
+    {
+      "type": "grid",
+      "name": "栅格布局",
+      "icon": "th",
+      "columns": [
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "radio",
+              "name": "单选框组-普通",
+              "core_com": "el-radio-group",
+              "icon": "regular/dot-circle",
+              "options": {
+                "showOtherOption": false,
+                "formula": "",
+                "inline": true,
+                "defaultValue": "",
+                "showLabel": false,
+                "options": [
+                  {
+                    "value": "牛逼",
+                    "label": "选项1"
+                  },
+                  {
+                    "value": "狗比",
+                    "label": "选项2"
+                  }
+                ],
+                "required": false,
+                "width": "",
+                "sourceType": "options",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "jsonOptions": [],
+                "remote": false,
+                "remoteOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692340214000_41211"
+              },
+              "key": "1692340214000_41211",
+              "keyindex": 7,
+              "model": "radio_1692340214000_41211",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "radio",
+              "name": "单选框组-json配置",
+              "core_com": "el-radio-group",
+              "icon": "regular/dot-circle",
+              "options": {
+                "showOtherOption": false,
+                "formula": "",
+                "inline": true,
+                "defaultValue": "",
+                "showLabel": false,
+                "options": [
+                  {
+                    "value": "选项1",
+                    "label": "选项1"
+                  },
+                  {
+                    "value": "选项2",
+                    "label": "选项2"
+                  },
+                  {
+                    "value": "选项3",
+                    "label": "选项3"
+                  }
+                ],
+                "required": false,
+                "width": "",
+                "sourceType": "json",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "jsonOptions": [
+                  {
+                    "value": "niubi",
+                    "label": "牛逼"
+                  },
+                  {
+                    "value": "goubi",
+                    "label": "狗比"
+                  }
+                ],
+                "remote": false,
+                "remoteOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692340235000_11792"
+              },
+              "key": "1692340235000_11792",
+              "keyindex": 8,
+              "model": "radio_1692340235000_11792",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "radio",
+              "name": "单选框组-远程地址",
+              "core_com": "el-radio-group",
+              "icon": "regular/dot-circle",
+              "options": {
+                "showOtherOption": false,
+                "formula": "",
+                "inline": true,
+                "defaultValue": "",
+                "showLabel": false,
+                "options": [
+                  {
+                    "value": "选项1",
+                    "label": "选项1"
+                  },
+                  {
+                    "value": "选项2",
+                    "label": "选项2"
+                  },
+                  {
+                    "value": "选项3",
+                    "label": "选项3"
+                  }
+                ],
+                "required": false,
+                "width": "",
+                "sourceType": "remote",
+                "remoteUrlAlias": "sample-depots.json",
+                "remoteUrl": null,
+                "jsonOptions": [],
+                "remote": false,
+                "remoteOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null,
+                  "children": "children"
+                },
+                "remoteFunc": "func_1692340424000_26165"
+              },
+              "key": "1692340424000_26165",
+              "keyindex": 10,
+              "model": "radio_1692340424000_26165",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false,
+          "key": "1692340248000_41096"
+        }
+      ],
+      "options": {
+        "gutter": 10,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1692340241000_92620"
+      },
+      "key": "1692340241000_92620",
+      "keyindex": 9,
+      "model": "grid_1692340241000_92620",
+      "rules": []
+    },
+    {
+      "type": "divider",
+      "core_com": "el-divider",
+      "name": "分隔符",
+      "icon": "grip-lines",
+      "inner_set_json": [],
+      "options": {
+        "width": "100%",
+        "content_position": "center",
+        "height": "",
+        "dividerhtml": "多选框组",
+        "remoteFunc": "func_1692342283000_22006"
+      },
+      "key": "1692342283000_22006",
+      "keyindex": 22,
+      "model": "divider_1692342283000_22006",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "rules": []
+    },
+    {
+      "type": "grid",
+      "name": "栅格布局",
+      "icon": "th",
+      "columns": [
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "checkbox",
+              "name": "多选框组",
+              "core_com": "el-checkbox-group",
+              "icon": "regular/check-square",
+              "options": {
+                "inline": true,
+                "defaultValue": [],
+                "formula": "",
+                "showLabel": false,
+                "options": [
+                  {
+                    "value": "狗"
+                  },
+                  {
+                    "value": "猫"
+                  }
+                ],
+                "required": false,
+                "width": "",
+                "sourceType": "options",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "jsonOptions": [],
+                "remote": false,
+                "remoteOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692340930000_51669"
+              },
+              "key": "1692340930000_51669",
+              "keyindex": 12,
+              "model": "checkbox_1692340930000_51669",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "checkbox",
+              "name": "多选框组-json配置",
+              "core_com": "el-checkbox-group",
+              "icon": "regular/check-square",
+              "options": {
+                "inline": true,
+                "defaultValue": [],
+                "formula": "",
+                "showLabel": false,
+                "options": [
+                  {
+                    "value": "选项1"
+                  },
+                  {
+                    "value": "选项2"
+                  },
+                  {
+                    "value": "选项3"
+                  }
+                ],
+                "required": false,
+                "width": "",
+                "sourceType": "json",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "jsonOptions": [
+                  {
+                    "value": "cat",
+                    "label": "猫"
+                  },
+                  {
+                    "value": "dog",
+                    "label": "狗"
+                  }
+                ],
+                "remote": false,
+                "remoteOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692341026000_57435"
+              },
+              "key": "1692341026000_57435",
+              "keyindex": 13,
+              "model": "checkbox_1692341026000_57435",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "checkbox",
+              "name": "多选框组-远程地址",
+              "core_com": "el-checkbox-group",
+              "icon": "regular/check-square",
+              "options": {
+                "inline": true,
+                "defaultValue": [],
+                "formula": "",
+                "showLabel": false,
+                "options": [
+                  {
+                    "value": "选项1"
+                  },
+                  {
+                    "value": "选项2"
+                  },
+                  {
+                    "value": "选项3"
+                  }
+                ],
+                "required": false,
+                "width": "",
+                "sourceType": "remote",
+                "remoteUrlAlias": "sample-depots.json",
+                "remoteUrl": null,
+                "jsonOptions": [],
+                "remote": false,
+                "remoteOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null,
+                  "children": "children"
+                },
+                "remoteFunc": "func_1692341211000_39983"
+              },
+              "key": "1692341211000_39983",
+              "keyindex": 14,
+              "model": "checkbox_1692341211000_39983",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false,
+          "key": "1692340933000_6159"
+        }
+      ],
+      "options": {
+        "gutter": 10,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1692340925000_36304"
+      },
+      "key": "1692340925000_36304",
+      "keyindex": 11,
+      "model": "grid_1692340925000_36304",
+      "rules": []
+    },
+    {
+      "type": "divider",
+      "core_com": "el-divider",
+      "name": "分隔符",
+      "icon": "grip-lines",
+      "inner_set_json": [],
+      "options": {
+        "width": "100%",
+        "content_position": "center",
+        "height": "",
+        "dividerhtml": "时间选择器",
+        "remoteFunc": "func_1692343764000_49083"
+      },
+      "key": "1692343764000_49083",
+      "keyindex": 23,
+      "model": "divider_1692343764000_49083",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "rules": []
+    },
+    {
+      "type": "grid",
+      "name": "栅格布局",
+      "icon": "th",
+      "columns": [
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "time",
+              "name": "时间选择器-时分秒",
+              "core_com": "el-time-picker",
+              "icon": "regular/clock",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "isRange": false,
+                "arrowControl": true,
+                "format": "HH:mm:ss",
+                "required": false,
+                "width": "",
+                "formula": "",
+                "remoteFunc": "func_1692341991000_84107",
+                "remoteOptions": []
+              },
+              "key": "1692341991000_84107",
+              "keyindex": 20,
+              "model": "time_1692341991000_84107",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": [],
+              "matchCol": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "time",
+              "name": "时间选择器-时间范围",
+              "core_com": "el-time-picker",
+              "icon": "regular/clock",
+              "options": {
+                "defaultValue": null,
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "isRange": true,
+                "arrowControl": true,
+                "format": "HH:mm:ss",
+                "required": false,
+                "width": "",
+                "formula": "",
+                "remoteFunc": "func_1692341941000_29106",
+                "remoteOptions": []
+              },
+              "key": "1692341941000_29106",
+              "keyindex": 19,
+              "model": "time_1692341941000_29106",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": [],
+              "matchCol": []
+            }
+          ],
+          "hide": false
+        }
+      ],
+      "options": {
+        "gutter": 10,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1692341227000_60004"
+      },
+      "key": "1692341227000_60004",
+      "keyindex": 15,
+      "model": "grid_1692341227000_60004",
+      "rules": []
+    },
+    {
+      "type": "divider",
+      "core_com": "el-divider",
+      "name": "分隔符",
+      "icon": "grip-lines",
+      "inner_set_json": [],
+      "options": {
+        "width": "100%",
+        "content_position": "center",
+        "height": "",
+        "dividerhtml": "日期选择器",
+        "remoteFunc": "func_1692343796000_56085"
+      },
+      "key": "1692343796000_56085",
+      "keyindex": 24,
+      "model": "divider_1692343796000_56085",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "rules": []
+    },
+    {
+      "type": "grid",
+      "name": "栅格布局",
+      "icon": "th",
+      "columns": [
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "date",
+              "name": "日期选择器",
+              "core_com": "el-date-picker",
+              "icon": "regular/calendar-alt",
+              "options": {
+                "defaultValue": 1692288000000,
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": true,
+                "required": false,
+                "width": "",
+                "formula": "",
+                "remoteFunc": "func_1692341877000_55630",
+                "remoteOptions": []
+              },
+              "key": "1692341877000_55630",
+              "keyindex": 18,
+              "model": "date_1692341877000_55630",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": [],
+              "matchCol": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "date",
+              "name": "日期选择器-年月日时分秒",
+              "core_com": "el-date-picker",
+              "icon": "regular/calendar-alt",
+              "options": {
+                "defaultValue": "2023-08-18 00:00:00",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "datetime",
+                "format": "yyyy-MM-dd HH:mm:ss",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "formula": "",
+                "remoteFunc": "func_1692343981000_68972",
+                "remoteOptions": []
+              },
+              "key": "1692343981000_68972",
+              "keyindex": 28,
+              "model": "date_1692343981000_68972",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": [],
+              "rules": [],
+              "matchCol": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "date",
+              "name": "日期选择器",
+              "core_com": "el-date-picker",
+              "icon": "regular/calendar-alt",
+              "options": {
+                "defaultValue": [
+                  "2023-08-10 00:00:00",
+                  "2023-08-19 00:00:00"
+                ],
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "datetimerange",
+                "format": "yyyy-MM-dd HH:mm:ss",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "formula": "",
+                "remoteFunc": "func_1692344060000_13573",
+                "remoteOptions": []
+              },
+              "key": "1692344060000_13573",
+              "keyindex": 29,
+              "model": "date_1692344060000_13573",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": [],
+              "matchCol": []
+            }
+          ],
+          "hide": false,
+          "key": "1692343810000_98300"
+        }
+      ],
+      "options": {
+        "gutter": 10,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1692343808000_12603"
+      },
+      "key": "1692343808000_12603",
+      "keyindex": 25,
+      "model": "grid_1692343808000_12603",
+      "rules": []
+    },
+    {
+      "type": "rate",
+      "name": "评分",
+      "icon": "regular/star",
+      "core_com": "el-rate",
+      "options": {
+        "defaultValue": 4,
+        "max": 5,
+        "disabled": false,
+        "allowHalf": false,
+        "required": false,
+        "formula": "",
+        "remoteFunc": "func_1692344096000_74775",
+        "remoteOptions": []
+      },
+      "key": "1692344096000_74775",
+      "keyindex": 30,
+      "model": "rate_1692344096000_74775",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "color",
+      "name": "颜色选择器",
+      "core_com": "el-color-picker",
+      "icon": "palette",
+      "options": {
+        "defaultValue": "#A50E0E",
+        "disabled": false,
+        "showAlpha": false,
+        "required": false,
+        "formula": "",
+        "remoteFunc": "func_1692344112000_77838",
+        "remoteOptions": []
+      },
+      "key": "1692344112000_77838",
+      "keyindex": 31,
+      "model": "color_1692344112000_77838",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "divider",
+      "core_com": "el-divider",
+      "name": "分隔符",
+      "icon": "grip-lines",
+      "inner_set_json": [],
+      "options": {
+        "width": "100%",
+        "content_position": "center",
+        "height": "",
+        "dividerhtml": "下拉选择框",
+        "remoteFunc": "func_1692344131000_38359"
+      },
+      "key": "1692344131000_38359",
+      "keyindex": 33,
+      "model": "divider_1692344131000_38359",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "rules": []
+    },
+    {
+      "type": "grid",
+      "name": "栅格布局",
+      "icon": "th",
+      "columns": [
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "select",
+              "name": "下拉选择框(单选)-可输入其他",
+              "icon": "regular/caret-square-down",
+              "core_com": "el-select",
+              "blacklist": [
+                "multiple"
+              ],
+              "options": {
+                "showOtherOption": true,
+                "defaultValue": "",
+                "filterable": true,
+                "multiple": false,
+                "disabled": false,
+                "clearable": false,
+                "placeholder": "",
+                "required": false,
+                "showLabel": false,
+                "width": "",
+                "options": [
+                  {
+                    "value": "小猫咪"
+                  },
+                  {
+                    "value": "小狗狗"
+                  },
+                  {
+                    "value": "阿牛"
+                  }
+                ],
+                "sourceType": "options",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "remote": false,
+                "remoteOptions": [],
+                "formula": "",
+                "jsonOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692344124000_541"
+              },
+              "key": "1692344124000_541",
+              "keyindex": 32,
+              "model": "select_1692344124000_541",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "select",
+              "name": "下拉选择框(单选)-json数据",
+              "icon": "regular/caret-square-down",
+              "core_com": "el-select",
+              "blacklist": [
+                "multiple"
+              ],
+              "options": {
+                "showOtherOption": false,
+                "defaultValue": "",
+                "filterable": true,
+                "multiple": false,
+                "disabled": false,
+                "clearable": false,
+                "placeholder": "",
+                "required": false,
+                "showLabel": false,
+                "width": "",
+                "options": [
+                  {
+                    "value": "下拉框1"
+                  },
+                  {
+                    "value": "下拉框2"
+                  },
+                  {
+                    "value": "下拉框3"
+                  }
+                ],
+                "sourceType": "json",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "remote": false,
+                "remoteOptions": [],
+                "formula": "",
+                "jsonOptions": [
+                  {
+                    "value": "cat",
+                    "label": "猫"
+                  },
+                  {
+                    "value": "dog",
+                    "label": "狗"
+                  }
+                ],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692350314000_95034"
+              },
+              "key": "1692350314000_95034",
+              "keyindex": 35,
+              "model": "select_1692350314000_95034",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "select",
+              "name": "下拉选择框(单选)-接口",
+              "icon": "regular/caret-square-down",
+              "core_com": "el-select",
+              "blacklist": [
+                "multiple"
+              ],
+              "options": {
+                "showOtherOption": false,
+                "defaultValue": "",
+                "filterable": true,
+                "multiple": false,
+                "disabled": false,
+                "clearable": false,
+                "placeholder": "",
+                "required": false,
+                "showLabel": false,
+                "width": "",
+                "options": [
+                  {
+                    "value": "下拉框1"
+                  },
+                  {
+                    "value": "下拉框2"
+                  },
+                  {
+                    "value": "下拉框3"
+                  }
+                ],
+                "sourceType": "remote",
+                "remoteUrlAlias": "sample-depots.json",
+                "remoteUrl": null,
+                "remote": false,
+                "remoteOptions": [],
+                "formula": "",
+                "jsonOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null,
+                  "children": "children"
+                },
+                "remoteFunc": "func_1692350322000_37455"
+              },
+              "key": "1692350322000_37455",
+              "keyindex": 36,
+              "model": "select_1692350322000_37455",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false,
+          "key": "1692344151000_30536"
+        }
+      ],
+      "options": {
+        "gutter": 10,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1692344149000_70110"
+      },
+      "key": "1692344149000_70110",
+      "keyindex": 34,
+      "model": "grid_1692344149000_70110",
+      "rules": []
+    },
+    {
+      "type": "grid",
+      "name": "栅格布局",
+      "icon": "th",
+      "columns": [
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "selectMultiple",
+              "name": "下拉选择框(多选)",
+              "icon": "regular/caret-square-down",
+              "core_com": "el-select",
+              "blacklist": [
+                "multiple"
+              ],
+              "options": {
+                "defaultValue": [],
+                "filterable": true,
+                "multiple": true,
+                "disabled": false,
+                "clearable": false,
+                "placeholder": "",
+                "required": false,
+                "showLabel": false,
+                "width": "",
+                "options": [
+                  {
+                    "value": "柯基"
+                  },
+                  {
+                    "value": "哈士奇"
+                  },
+                  {
+                    "value": "柴犬"
+                  },
+                  {
+                    "value": "边牧"
+                  },
+                  {
+                    "value": "闹闹"
+                  }
+                ],
+                "sourceType": "options",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "remote": false,
+                "remoteOptions": [],
+                "formula": "",
+                "jsonOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692350389000_32041"
+              },
+              "key": "1692350389000_32041",
+              "keyindex": 38,
+              "model": "selectMultiple_1692350389000_32041",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "selectMultiple",
+              "name": "下拉选择框(多选)-json",
+              "icon": "regular/caret-square-down",
+              "core_com": "el-select",
+              "blacklist": [
+                "multiple"
+              ],
+              "options": {
+                "defaultValue": [],
+                "filterable": true,
+                "multiple": true,
+                "disabled": false,
+                "clearable": false,
+                "placeholder": "",
+                "required": false,
+                "showLabel": false,
+                "width": "",
+                "options": [
+                  {
+                    "value": "下拉框1"
+                  },
+                  {
+                    "value": "下拉框2"
+                  },
+                  {
+                    "value": "下拉框3"
+                  }
+                ],
+                "sourceType": "json",
+                "remoteUrlAlias": null,
+                "remoteUrl": null,
+                "remote": false,
+                "remoteOptions": [],
+                "formula": "",
+                "jsonOptions": [
+                  {
+                    "value": "cat",
+                    "label": "猫"
+                  },
+                  {
+                    "value": "dog",
+                    "label": "狗"
+                  }
+                ],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null
+                },
+                "remoteFunc": "func_1692350390000_32341"
+              },
+              "key": "1692350390000_32341",
+              "keyindex": 39,
+              "model": "selectMultiple_1692350390000_32341",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false
+        },
+        {
+          "span": 8,
+          "list": [
+            {
+              "type": "selectMultiple",
+              "name": "下拉选择框(多选)-接口",
+              "icon": "regular/caret-square-down",
+              "core_com": "el-select",
+              "blacklist": [
+                "multiple"
+              ],
+              "options": {
+                "defaultValue": [],
+                "filterable": true,
+                "multiple": true,
+                "disabled": false,
+                "clearable": false,
+                "placeholder": "",
+                "required": false,
+                "showLabel": false,
+                "width": "",
+                "options": [
+                  {
+                    "value": "下拉框1"
+                  },
+                  {
+                    "value": "下拉框2"
+                  },
+                  {
+                    "value": "下拉框3"
+                  }
+                ],
+                "sourceType": "remote",
+                "remoteUrlAlias": "sample-depots.json",
+                "remoteUrl": null,
+                "remote": false,
+                "remoteOptions": [],
+                "formula": "",
+                "jsonOptions": [],
+                "props": {
+                  "value": "value",
+                  "label": "label",
+                  "method": "post",
+                  "data": null,
+                  "children": "children"
+                },
+                "remoteFunc": "func_1692350392000_42431"
+              },
+              "key": "1692350392000_42431",
+              "keyindex": 40,
+              "model": "selectMultiple_1692350392000_42431",
+              "hideTitle": false,
+              "labelWidth": null,
+              "style": null,
+              "hide": false,
+              "inner_set_json": {},
+              "rules": []
+            }
+          ],
+          "hide": false,
+          "key": "1692350381000_78600"
+        }
+      ],
+      "options": {
+        "gutter": 10,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1692350378000_88333"
+      },
+      "key": "1692350378000_88333",
+      "keyindex": 37,
+      "model": "grid_1692350378000_88333",
+      "rules": []
+    },
+    {
+      "type": "switch",
+      "name": "开关",
+      "icon": "toggle-off",
+      "core_com": "el-switch",
+      "options": {
+        "defaultValue": false,
+        "required": false,
+        "disabled": false,
+        "formula": "",
+        "remoteFunc": "func_1692350552000_82267",
+        "remoteOptions": []
+      },
+      "key": "1692350552000_82267",
+      "keyindex": 41,
+      "model": "switch_1692350552000_82267",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "slider",
+      "name": "滑块",
+      "icon": "sliders-h",
+      "core_com": "el-slider",
+      "options": {
+        "defaultValue": 0,
+        "disabled": false,
+        "required": false,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "showInput": false,
+        "range": false,
+        "width": "",
+        "formula": "",
+        "remoteFunc": "func_1692350556000_62549",
+        "remoteOptions": []
+      },
+      "key": "1692350556000_62549",
+      "keyindex": 42,
+      "model": "slider_1692350556000_62549",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "button",
+      "name": "按键-点击可以弹出hello world",
+      "icon": "hand-pointer",
+      "core_com": "el-button",
+      "options": {
+        "disabled": false,
+        "placeholder": "",
+        "buttonset": {
+          "size": "mini",
+          "type": "warning",
+          "onclick": "({\n    \"default\": function ({\n        buttonset,//当前button设置\n        Models,//表单全部值\n        FormConfig,//表单设置\n        RecursiveFormList, //转换工具\n        HttpRequest//http访问函数；来自axios\n    }) {\n        alert('hello word')\n    }\n})",
+          "plain": false,
+          "round": false
+        },
+        "remoteFunc": "func_1692350560000_52418",
+        "remoteOptions": []
+      },
+      "key": "1692350560000_52418",
+      "keyindex": 43,
+      "model": "button_1692350560000_52418",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "table",
+      "name": "表格",
+      "icon": "table",
+      "options": {
+        "defaultValue": [
+          {
+            "22odL": "12",
+            "FCVC8": "冯绍封",
+            "e9t8S": "语文",
+            "z2Mg0": "12",
+            "_c_at": 1692362338,
+            "_u_at": 1692362370,
+            "is_old": true
+          },
+          {
+            "22odL": "13",
+            "FCVC8": "蒋晶清",
+            "e9t8S": "数学",
+            "z2Mg0": "33",
+            "_c_at": 1692362339,
+            "_u_at": 1692362371,
+            "is_old": true
+          }
+        ],
+        "disabled": false,
+        "required": false,
+        "width": "",
+        "tableset": [
+          {
+            "code": "22odL",
+            "inner_set_json": [],
+            "name": "学号",
+            "placeholder": null,
+            "width": null,
+            "editer": "text",
+            "editer_component": null,
+            "editer_config": null,
+            "defaultValue": null,
+            "aggregate": null,
+            "formula": null,
+            "limittype": "canedit",
+            "required": false,
+            "datasourceType": "normal",
+            "datasource": "",
+            "datasourceAdvanced": {
+              "sourceType": "options",
+              "remoteUrlAlias": null,
+              "remoteOptions": [],
+              "jsonOptions": [],
+              "options": [
+                {
+                  "value": "选项1",
+                  "label": "选项1"
+                },
+                {
+                  "value": "选项2",
+                  "label": "选项2"
+                },
+                {
+                  "value": "选项3",
+                  "label": "选项3"
+                }
+              ],
+              "props": {
+                "value": "value",
+                "label": "label",
+                "children": "children",
+                "data": null
+              },
+              "remoteFunc": "",
+              "showLabel": false
+            },
+            "matchCol": [],
+            "matchFun": []
+          },
+          {
+            "code": "FCVC8",
+            "inner_set_json": [],
+            "name": "姓名",
+            "placeholder": null,
+            "width": null,
+            "editer": "text",
+            "editer_component": null,
+            "editer_config": null,
+            "defaultValue": null,
+            "aggregate": null,
+            "formula": null,
+            "limittype": "canedit",
+            "required": false,
+            "datasourceType": "normal",
+            "datasource": null,
+            "datasourceAdvanced": {
+              "sourceType": "options",
+              "remoteUrlAlias": null,
+              "remoteOptions": [],
+              "jsonOptions": [],
+              "options": [
+                {
+                  "value": "选项1",
+                  "label": "选项1"
+                },
+                {
+                  "value": "选项2",
+                  "label": "选项2"
+                },
+                {
+                  "value": "选项3",
+                  "label": "选项3"
+                }
+              ],
+              "props": {
+                "value": "value",
+                "label": "label",
+                "children": "children",
+                "data": null
+              },
+              "remoteFunc": "",
+              "showLabel": false
+            },
+            "matchCol": [],
+            "matchFun": []
+          },
+          {
+            "code": "e9t8S",
+            "inner_set_json": [],
+            "name": "科目",
+            "placeholder": null,
+            "width": null,
+            "editer": "select",
+            "editer_component": null,
+            "editer_config": null,
+            "defaultValue": null,
+            "aggregate": null,
+            "formula": null,
+            "limittype": "canedit",
+            "required": false,
+            "datasourceType": "normal",
+            "datasource": "语文,数学,英语",
+            "datasourceAdvanced": {
+              "sourceType": "options",
+              "remoteUrlAlias": null,
+              "remoteOptions": [],
+              "jsonOptions": [],
+              "options": [
+                {
+                  "value": "选项1",
+                  "label": "选项1"
+                },
+                {
+                  "value": "选项2",
+                  "label": "选项2"
+                },
+                {
+                  "value": "选项3",
+                  "label": "选项3"
+                }
+              ],
+              "props": {
+                "value": "value",
+                "label": "label",
+                "children": "children",
+                "data": null
+              },
+              "remoteFunc": "",
+              "showLabel": false
+            },
+            "matchCol": [],
+            "matchFun": []
+          },
+          {
+            "code": "z2Mg0",
+            "inner_set_json": [],
+            "name": "成绩",
+            "placeholder": null,
+            "width": null,
+            "editer": "text",
+            "editer_component": null,
+            "editer_config": null,
+            "defaultValue": null,
+            "aggregate": "sum",
+            "formula": null,
+            "limittype": "canedit",
+            "required": false,
+            "datasourceType": "normal",
+            "datasource": null,
+            "datasourceAdvanced": {
+              "sourceType": "options",
+              "remoteUrlAlias": null,
+              "remoteOptions": [],
+              "jsonOptions": [],
+              "options": [
+                {
+                  "value": "选项1",
+                  "label": "选项1"
+                },
+                {
+                  "value": "选项2",
+                  "label": "选项2"
+                },
+                {
+                  "value": "选项3",
+                  "label": "选项3"
+                }
+              ],
+              "props": {
+                "value": "value",
+                "label": "label",
+                "children": "children",
+                "data": null
+              },
+              "remoteFunc": "",
+              "showLabel": false
+            },
+            "matchCol": [],
+            "matchFun": []
+          }
+        ],
+        "table_edit": true,
+        "table_add": true,
+        "table_delete": true,
+        "table_row_create": [],
+        "table_row_update": [],
+        "remoteFunc": "func_1692362134000_15977",
+        "remoteOptions": []
+      },
+      "key": "1692362134000_15977",
+      "keyindex": 45,
+      "model": "table_1692362134000_15977",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": [],
+      "matchCol": []
+    },
+    {
+      "componentName": "fm-chose-china-area",
+      "type": "custom",
+      "name": "城市选择器",
+      "icon": "city",
+      "options": {
+        "placeholder": "",
+        "defaultValue": {
+          "provinceCode": null,
+          "provinceName": "",
+          "cityCode": null,
+          "cityName": "",
+          "regionCode": null,
+          "regionName": ""
+        },
+        "componentName": "fm-chose-china-area",
+        "chinaareaset": {
+          "provinceDisabled": false,
+          "cityDisabled": false,
+          "regionDisabled": false,
+          "showCity": true,
+          "showRegion": true
+        },
+        "width": 100,
+        "disabled": false,
+        "remoteFunc": "func_1692362399000_66388"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362399000_66388",
+      "keyindex": 47,
+      "model": "custom_1692362399000_66388",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "tooltip": "对自动完成输入框的兼容升级；可以附带参数",
+      "componentName": "fm-ele-auto-complete-sample2",
+      "type": "custom",
+      "name": "自动完成输入框2",
+      "icon": "text-field",
+      "options": {
+        "placeholder": "试试输入12",
+        "defaultValue": null,
+        "componentName": "fm-ele-auto-complete-sample2",
+        "width": "100%",
+        "disabled": false,
+        "clearable": true,
+        "showLabel": false,
+        "options": [],
+        "sourceType": "remote",
+        "remoteUrlAlias": "test.json",
+        "jsonOptions": [],
+        "remoteOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label",
+          "children": "children",
+          "data": "{}",
+          "method": "post"
+        },
+        "remoteFunc": "func_1692362590000_81818"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362590000_81818",
+      "keyindex": 51,
+      "model": "custom_1692362590000_81818",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "单行文本-字符显示",
+      "type": "input",
+      "core_com": "el-input",
+      "name": "输入下面的内容会自动更新到下面的前端显示值里面",
+      "icon": "text-field",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "",
+        "pattern": "",
+        "placeholder": "随便输入点什么看看效果吧",
+        "formula": "",
+        "remoteFunc": "func_1692362730000_48295",
+        "remoteOptions": []
+      },
+      "key": "1692362730000_48295",
+      "keyindex": 53,
+      "model": "input_1692362730000_48295",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "通过公式计算显示内容",
+      "componentName": "fm-front-end-view",
+      "type": "custom",
+      "name": "前端显示值",
+      "hideTitle": false,
+      "icon": "chalkboard",
+      "options": {
+        "placeholder": "",
+        "defaultValue": null,
+        "componentName": "fm-front-end-view",
+        "formula": "@[输入下面的内容会自动更新到下面的前端显示值里面_1692362730000_48295]",
+        "remoteFunc": "func_1692362608000_84637"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362608000_84637",
+      "keyindex": 52,
+      "model": "custom_1692362608000_84637",
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "componentName": "fm-ele-cascader",
+      "componentSet": "fm-ele-cascader-set",
+      "core_com": "ele-cascader",
+      "type": "custom",
+      "name": "级联",
+      "icon": "chalkboard",
+      "options": {
+        "placeholder": "",
+        "defaultValue": [
+          {
+            "path": [],
+            "pathname": []
+          }
+        ],
+        "componentName": "fm-ele-cascader",
+        "cascader_set": {
+          "show-all-levels": true,
+          "collapse-tags": false,
+          "separator": "/",
+          "filterable": true,
+          "expandTrigger": "hover",
+          "multiple": false,
+          "checkStrictly": false
+        },
+        "clearable": true,
+        "disabled": false,
+        "showLabel": false,
+        "options": [],
+        "sourceType": "json",
+        "remoteUrlAlias": null,
+        "jsonOptions": [
+          {
+            "value": "zhinan",
+            "label": "指南",
+            "children": [
+              {
+                "value": "shejiyuanze",
+                "label": "设计原则",
+                "children": [
+                  {
+                    "value": "yizhi",
+                    "label": "一致"
+                  },
+                  {
+                    "value": "fankui",
+                    "label": "反馈"
+                  },
+                  {
+                    "value": "xiaolv",
+                    "label": "效率"
+                  },
+                  {
+                    "value": "kekong",
+                    "label": "可控"
+                  }
+                ]
+              },
+              {
+                "value": "daohang",
+                "label": "导航",
+                "children": [
+                  {
+                    "value": "cexiangdaohang",
+                    "label": "侧向导航"
+                  },
+                  {
+                    "value": "dingbudaohang",
+                    "label": "顶部导航"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "zujian",
+            "label": "组件",
+            "children": [
+              {
+                "value": "basic",
+                "label": "Basic",
+                "children": [
+                  {
+                    "value": "layout",
+                    "label": "Layout 布局"
+                  },
+                  {
+                    "value": "color",
+                    "label": "Color 色彩"
+                  },
+                  {
+                    "value": "typography",
+                    "label": "Typography 字体"
+                  },
+                  {
+                    "value": "icon",
+                    "label": "Icon 图标"
+                  },
+                  {
+                    "value": "button",
+                    "label": "Button 按钮"
+                  }
+                ]
+              },
+              {
+                "value": "form",
+                "label": "Form",
+                "children": [
+                  {
+                    "value": "radio",
+                    "label": "Radio 单选框"
+                  },
+                  {
+                    "value": "checkbox",
+                    "label": "Checkbox 多选框"
+                  },
+                  {
+                    "value": "input",
+                    "label": "Input 输入框"
+                  },
+                  {
+                    "value": "input-number",
+                    "label": "InputNumber 计数器"
+                  },
+                  {
+                    "value": "select",
+                    "label": "Select 选择器"
+                  },
+                  {
+                    "value": "cascader",
+                    "label": "Cascader 级联选择器"
+                  },
+                  {
+                    "value": "switch",
+                    "label": "Switch 开关"
+                  },
+                  {
+                    "value": "slider",
+                    "label": "Slider 滑块"
+                  },
+                  {
+                    "value": "time-picker",
+                    "label": "TimePicker 时间选择器"
+                  },
+                  {
+                    "value": "date-picker",
+                    "label": "DatePicker 日期选择器"
+                  },
+                  {
+                    "value": "datetime-picker",
+                    "label": "DateTimePicker 日期时间选择器"
+                  },
+                  {
+                    "value": "upload",
+                    "label": "Upload 上传"
+                  },
+                  {
+                    "value": "rate",
+                    "label": "Rate 评分"
+                  },
+                  {
+                    "value": "form",
+                    "label": "Form 表单"
+                  }
+                ]
+              },
+              {
+                "value": "data",
+                "label": "Data",
+                "children": [
+                  {
+                    "value": "table",
+                    "label": "Table 表格"
+                  },
+                  {
+                    "value": "tag",
+                    "label": "Tag 标签"
+                  },
+                  {
+                    "value": "progress",
+                    "label": "Progress 进度条"
+                  },
+                  {
+                    "value": "tree",
+                    "label": "Tree 树形控件"
+                  },
+                  {
+                    "value": "pagination",
+                    "label": "Pagination 分页"
+                  },
+                  {
+                    "value": "badge",
+                    "label": "Badge 标记"
+                  }
+                ]
+              },
+              {
+                "value": "notice",
+                "label": "Notice",
+                "children": [
+                  {
+                    "value": "alert",
+                    "label": "Alert 警告"
+                  },
+                  {
+                    "value": "loading",
+                    "label": "Loading 加载"
+                  },
+                  {
+                    "value": "message",
+                    "label": "Message 消息提示"
+                  },
+                  {
+                    "value": "message-box",
+                    "label": "MessageBox 弹框"
+                  },
+                  {
+                    "value": "notification",
+                    "label": "Notification 通知"
+                  }
+                ]
+              },
+              {
+                "value": "navigation",
+                "label": "Navigation",
+                "children": [
+                  {
+                    "value": "menu",
+                    "label": "NavMenu 导航菜单"
+                  },
+                  {
+                    "value": "tabs",
+                    "label": "Tabs 标签页"
+                  },
+                  {
+                    "value": "breadcrumb",
+                    "label": "Breadcrumb 面包屑"
+                  },
+                  {
+                    "value": "dropdown",
+                    "label": "Dropdown 下拉菜单"
+                  },
+                  {
+                    "value": "steps",
+                    "label": "Steps 步骤条"
+                  }
+                ]
+              },
+              {
+                "value": "others",
+                "label": "Others",
+                "children": [
+                  {
+                    "value": "dialog",
+                    "label": "Dialog 对话框"
+                  },
+                  {
+                    "value": "tooltip",
+                    "label": "Tooltip 文字提示"
+                  },
+                  {
+                    "value": "popover",
+                    "label": "Popover 弹出框"
+                  },
+                  {
+                    "value": "card",
+                    "label": "Card 卡片"
+                  },
+                  {
+                    "value": "carousel",
+                    "label": "Carousel 走马灯"
+                  },
+                  {
+                    "value": "collapse",
+                    "label": "Collapse 折叠面板"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "ziyuan",
+            "label": "资源",
+            "children": [
+              {
+                "value": "axure",
+                "label": "Axure Components"
+              },
+              {
+                "value": "sketch",
+                "label": "Sketch Templates"
+              },
+              {
+                "value": "jiaohu",
+                "label": "组件交互文档"
+              }
+            ]
+          }
+        ],
+        "remoteOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label",
+          "children": "children",
+          "data": "{}"
+        },
+        "remoteFunc": "func_1692362790000_19998"
+      },
+      "blacklist": [
+        "componentName",
+        "showLabel",
+        "componentName"
+      ],
+      "key": "1692362790000_19998",
+      "keyindex": 54,
+      "model": "custom_1692362790000_19998",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    }
+  ],
+  "remove_list": [
+    {
+      "type": "select",
+      "name": "下拉选择框(单选)",
+      "icon": "regular/caret-square-down",
+      "core_com": "el-select",
+      "blacklist": [
+        "multiple"
+      ],
+      "options": {
+        "showOtherOption": false,
+        "defaultValue": "",
+        "filterable": true,
+        "multiple": false,
+        "disabled": false,
+        "clearable": false,
+        "placeholder": "",
+        "required": false,
+        "showLabel": false,
+        "width": "",
+        "options": [
+          {
+            "value": "下拉框1"
+          },
+          {
+            "value": "下拉框2"
+          },
+          {
+            "value": "下拉框3"
+          }
+        ],
+        "sourceType": "options",
+        "remoteUrlAlias": null,
+        "remoteUrl": null,
+        "remote": false,
+        "remoteOptions": [],
+        "formula": "",
+        "jsonOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label",
+          "method": "post",
+          "data": null
+        },
+        "remoteFunc": "func_1692341869000_75963"
+      },
+      "key": "1692341869000_75963",
+      "keyindex": 17,
+      "model": "select_1692341869000_75963",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "time",
+      "name": "时间选择器-年月日时分秒",
+      "core_com": "el-time-picker",
+      "icon": "regular/clock",
+      "options": {
+        "defaultValue": "",
+        "readonly": false,
+        "disabled": false,
+        "editable": true,
+        "clearable": true,
+        "placeholder": "",
+        "startPlaceholder": "",
+        "endPlaceholder": "",
+        "isRange": false,
+        "arrowControl": true,
+        "format": "yyyy-MM-dd HH:mm:ss",
+        "required": false,
+        "width": "",
+        "formula": "",
+        "remoteFunc": "func_1692341233000_93811",
+        "remoteOptions": []
+      },
+      "key": "1692341233000_93811",
+      "keyindex": 16,
+      "model": "time_1692341233000_93811",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": [],
+      "matchCol": []
+    },
+    {
+      "type": "time",
+      "name": "时间选择器",
+      "core_com": "el-time-picker",
+      "icon": "regular/clock",
+      "options": {
+        "defaultValue": "",
+        "readonly": false,
+        "disabled": false,
+        "editable": true,
+        "clearable": true,
+        "placeholder": "",
+        "startPlaceholder": "",
+        "endPlaceholder": "",
+        "isRange": false,
+        "arrowControl": true,
+        "format": "HH:mm:ss",
+        "required": false,
+        "width": "",
+        "formula": "",
+        "remoteFunc": "func_1692343944000_76651",
+        "remoteOptions": []
+      },
+      "key": "1692343944000_76651",
+      "keyindex": 26,
+      "model": "time_1692343944000_76651",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "time",
+      "name": "时间选择器",
+      "core_com": "el-time-picker",
+      "icon": "regular/clock",
+      "options": {
+        "defaultValue": "",
+        "readonly": false,
+        "disabled": false,
+        "editable": true,
+        "clearable": true,
+        "placeholder": "",
+        "startPlaceholder": "",
+        "endPlaceholder": "",
+        "isRange": false,
+        "arrowControl": true,
+        "format": "HH:mm:ss",
+        "required": false,
+        "width": "",
+        "formula": "",
+        "remoteFunc": "func_1692343967000_38033",
+        "remoteOptions": []
+      },
+      "key": "1692343967000_38033",
+      "keyindex": 27,
+      "model": "time_1692343967000_38033",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "componentName": "fm-chose-china-area",
+      "type": "custom",
+      "name": "城市选择器",
+      "icon": "city",
+      "options": {
+        "placeholder": "",
+        "defaultValue": {
+          "provinceCode": null,
+          "provinceName": "",
+          "cityCode": null,
+          "cityName": "",
+          "regionCode": null,
+          "regionName": ""
+        },
+        "componentName": "fm-chose-china-area",
+        "chinaareaset": {
+          "provinceDisabled": false,
+          "cityDisabled": false,
+          "regionDisabled": false,
+          "showCity": true,
+          "showRegion": true
+        },
+        "width": 100,
+        "disabled": false,
+        "remoteFunc": "func_1692362269000_1838"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362269000_1838",
+      "keyindex": 46,
+      "model": "custom_1692362269000_1838",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "type": "blank",
+      "tooltip": "插槽功能，可以引入自定义的组件，<template slot=\"blank\" slot-scope=\"scope\">xxx;slotname=blank是内部编码</template>",
+      "name": "插槽-高级管理员二开使用",
+      "icon": "code",
+      "options": {
+        "defaultType": "String",
+        "remoteFunc": "func_1692362092000_36349",
+        "remoteOptions": []
+      },
+      "key": "1692362092000_36349",
+      "keyindex": 44,
+      "model": "blank_1692362092000_36349",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": [],
+      "rules": []
+    },
+    {
+      "componentName": "fm-chose-contact",
+      "type": "custom",
+      "name": "通讯录选择器",
+      "icon": "address-book",
+      "options": {
+        "width": null,
+        "defaultValue": [],
+        "placeholder": "请选择联系人",
+        "componentName": "fm-chose-contact",
+        "remoteFunc": "func_1692362980000_46708"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362980000_46708",
+      "keyindex": 62,
+      "model": "custom_1692362980000_46708",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选人员(带工号,多选)；显示值效果：张三(100012)，李四(19923),格式是员工名(工号)（可联动）",
+      "componentName": "fm-chose-users-select-userid-name",
+      "type": "custom",
+      "name": "选人员(带工号,多选)",
+      "icon": "users",
+      "options": {
+        "defaultValue": [],
+        "width": null,
+        "placeholder": "请选择人员",
+        "componentName": "fm-chose-users-select-userid-name",
+        "remoteFunc": "func_1692362977000_46787"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362977000_46787",
+      "keyindex": 61,
+      "model": "custom_1692362977000_46787",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选人员(带工号,单选)；显示值效果：张三(100011) 格式是名称(工号)--（可联动）",
+      "componentName": "fm-chose-user-select-userid-name",
+      "type": "custom",
+      "name": "选人员(带工号,单选)",
+      "icon": "user",
+      "options": {
+        "defaultValue": [],
+        "width": null,
+        "placeholder": "请选择人员",
+        "componentName": "fm-chose-user-select-userid-name",
+        "remoteFunc": "func_1692362974000_91137"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362974000_91137",
+      "keyindex": 60,
+      "model": "custom_1692362974000_91137",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选人员(树状)(多选)；显示值效果：信息中心-李四，信息部门-张三（可联动）(同时包含部门信息)",
+      "componentName": "fm-chose-users-treeselect-userid-name-deptid",
+      "type": "custom",
+      "name": "选人员(树状)(多选)",
+      "icon": "users",
+      "options": {
+        "defaultValue": [],
+        "width": null,
+        "placeholder": "请选择人员",
+        "componentName": "fm-chose-users-treeselect-userid-name-deptid",
+        "remoteFunc": "func_1692362971000_13310"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362971000_13310",
+      "keyindex": 59,
+      "model": "custom_1692362971000_13310",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选人员(树状)(单选)；显示值效果：信息中心-李四（可表单联动）(同时包含部门信息)",
+      "componentName": "fm-chose-user-treeselect-userid-name-deptid",
+      "type": "custom",
+      "name": "选人员(树状)(单选)",
+      "icon": "user",
+      "options": {
+        "defaultValue": [],
+        "width": null,
+        "placeholder": "请选择人员",
+        "componentName": "fm-chose-user-treeselect-userid-name-deptid",
+        "remoteFunc": "func_1692362968000_62383"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362968000_62383",
+      "keyindex": 58,
+      "model": "custom_1692362968000_62383",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选部门(多选)；显示值效果：集团公司-信息中心，集团公司-总裁办（可联动）",
+      "componentName": "fm-chose-depts-select-nametree-deptid",
+      "type": "custom",
+      "name": "选部门(多选)",
+      "icon": "sitemap",
+      "options": {
+        "defaultValue": [],
+        "width": "100%",
+        "placeholder": "请选择部门",
+        "componentName": "fm-chose-depts-select-nametree-deptid",
+        "remoteFunc": "func_1692362965000_92145"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362965000_92145",
+      "keyindex": 57,
+      "model": "custom_1692362965000_92145",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选部门(单选)；显示值效果：xx部门（可联动）",
+      "componentName": "fm-chose-dept-select-deptid",
+      "type": "custom",
+      "name": "选部门(单选)",
+      "icon": "sitemap",
+      "options": {
+        "width": null,
+        "defaultValue": null,
+        "placeholder": "请选择部门",
+        "componentName": "fm-chose-dept-select-deptid",
+        "remoteFunc": "func_1692362959000_28626"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362959000_28626",
+      "keyindex": 56,
+      "model": "custom_1692362959000_28626",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "tooltip": "选部门(长)(单选)；显示值效果：xx子公司-xx部门-xx部门（可联动）",
+      "componentName": "fm-chose-dept-select-tree-deptid",
+      "type": "custom",
+      "name": "选部门(长)(单选)",
+      "icon": "sitemap",
+      "options": {
+        "width": "100%",
+        "defaultValue": null,
+        "placeholder": "请选择部门",
+        "componentName": "fm-chose-dept-select-tree-deptid",
+        "remoteFunc": "func_1692362957000_11554"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362957000_11554",
+      "keyindex": 55,
+      "model": "custom_1692362957000_11554",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "componentName": "fm-fileupload",
+      "componentSet": "fm-fileupload-set",
+      "type": "custom",
+      "name": "文件上传",
+      "icon": "upload",
+      "options": {
+        "placeholder": "",
+        "defaultValue": [],
+        "componentName": "fm-fileupload",
+        "fileuploadset": {
+          "multiple": true,
+          "length": 8,
+          "single_file_max_size": 0
+        },
+        "disabled": false,
+        "remoteFunc": "func_1692362481000_68527"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362481000_68527",
+      "keyindex": 48,
+      "model": "custom_1692362481000_68527",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "componentName": "fm-imageupload",
+      "componentSet": "fm-imageupload-set",
+      "type": "custom",
+      "name": "图片上传",
+      "icon": "regular/image",
+      "options": {
+        "placeholder": "",
+        "defaultValue": [],
+        "componentName": "fm-imageupload",
+        "imageuploadset": {
+          "multiple": true,
+          "length": 8
+        },
+        "size": {
+          "width": 100,
+          "height": 100
+        },
+        "disabled": false,
+        "remoteFunc": "func_1692362495000_95322"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362495000_95322",
+      "keyindex": 49,
+      "model": "custom_1692362495000_95322",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": []
+    },
+    {
+      "componentName": "fm-tinymce",
+      "componentSet": "fm-tinymce-set",
+      "type": "custom",
+      "name": "富文本编辑",
+      "icon": "edit",
+      "options": {
+        "placeholder": "",
+        "defaultValue": "<p>富文本编辑器。可以接着编辑哦...</p>\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 16.6667%;\">姓名</td>\n<td style=\"width: 16.6667%;\">学号</td>\n<td style=\"width: 16.6667%;\">年级</td>\n<td style=\"width: 16.6667%;\">科目</td>\n<td style=\"width: 16.6667%;\">成绩</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 16.6667%;\">bill</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n<td style=\"width: 16.6667%;\">A</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 16.6667%;\">joy ab</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n<td style=\"width: 16.6667%;\">C</td>\n<td style=\"width: 16.6667%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>",
+        "componentName": "fm-tinymce",
+        "tinymceset": {
+          "height": 200,
+          "toolbar": "undo redo | formatselect fontsizeselect bold italic underline | bullist numlist blockquote | fullscreen code",
+          "menubar": "edit insert view format table"
+        },
+        "remoteFunc": "func_1692362500000_63646"
+      },
+      "blacklist": [
+        "componentName"
+      ],
+      "key": "1692362500000_63646",
+      "keyindex": 50,
+      "model": "custom_1692362500000_63646",
+      "hideTitle": false,
+      "labelWidth": null,
+      "style": null,
+      "hide": false,
+      "inner_set_json": {},
+      "rules": [],
+      "matchCol": []
+    }
+  ],
+  "config": {
+    "labelWidth": 120,
+    "labelPosition": "top",
+    "xs_config": {
+      "labelWidth": 180,
+      "labelPosition": "top",
+      "size": "mini",
+      "rowMax": 1
+    },
+    "sm_config": {
+      "labelWidth": 180,
+      "labelPosition": "top",
+      "size": "mini",
+      "rowMax": 2
+    }
+  }
+}         
+            }
+        },
+
+        methods: {
+
+
+
+
+
+        },
+        mounted(){
+
+            let val=localStorage.getItem('widgetFormDemo004')
+            if(!!val){
+                this.widgetForm=JSON.parse(val);
+            }
+
+        }
+
+        ,
+        watch: {
+
+            widgetForm: {
+                deep: true,
+                handler: function (val) {
+
+                    localStorage.setItem('widgetFormDemo004',JSON.stringify(val))
+
+                }
+            }
+        }
+    });
+
+
+</script>

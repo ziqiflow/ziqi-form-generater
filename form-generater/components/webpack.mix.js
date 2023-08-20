@@ -57,7 +57,7 @@ mix.webpackConfig({
 mix
     .js('src/views/oa/flow/common/fm/FmChoseChinaArea.js', 'dist/js/')
     .js('src/views/oa/flow/common/fm/FmEleCascader.js','dist/js/')
-    .js('src/views/oa/flow/common/fm/FmEleAutoCompleteSample.js','dist/js/')
+    .js('src/views/oa/flow/common/fm/FmEleAutoCompleteSample2.js','dist/js/')
     .js('src/views/oa/flow/common/fm/FmFrontEndView.js','dist/js/')
 
 

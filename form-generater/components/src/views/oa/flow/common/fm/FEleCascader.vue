@@ -120,19 +120,24 @@ import cmixins from './mixins.js'
 
 
                 setTimeout(()=>{
-                    var tagSpans = $(this.$refs.temp_el_cascader.$el).find('.el-cascader__tags .el-tag span'); // 获取所有的span元素
                     var tagTexts = []; // 创建一个空数组，用于存储提取后的文本
 
-                    // window.cc=$(this.$refs.temp_el_cascader.$el);
-
-
-                    // 遍历所有的span元素，将其中的文本进行trim操作，并添加到tagTexts数组中
-                    tagSpans.each(function() {
+                    //  window.cc=$(this.$refs.temp_el_cascader.$el);
+                    if(this.cascader_set.multiple){
+                        var tagSpans = $(this.$refs.temp_el_cascader.$el).find('.el-cascader__tags .el-tag span'); // 获取所有的span元素
+                        tagSpans.each(function() {
                         tagTexts.push($(this).text().trim());
                     });
+                    }else{
+                        tagTexts.push($(this.$refs.temp_el_cascader.$el).find('input').val())
+                    }
 
+                    // 遍历所有的span元素，将其中的文本进行trim操作，并添加到tagTexts数组中
+    
                     this.tagTexts=tagTexts;
-                    // console.log(tagTexts)
+
+
+                    console.log(tagTexts)
 
                     this.$emit('change',this.sync_value);
                 },200)

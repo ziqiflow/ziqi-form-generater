@@ -23,6 +23,7 @@
     {
       "componentName": "fm-front-end-view",
       "type": "custom",
+       "tooltip":"通过公式计算显示内容",
       "name": "前端显示值",
       "hideTitle": true,
       "icon": "chalkboard",
@@ -81,15 +82,14 @@
       ]
     },
     {
-      "componentName": "fm-ele-auto-complete-sample",
-      "componentSet": "fm-ele-auto-complete-sample-set",
+      "componentName": "fm-ele-auto-complete-sample2",
       "type": "custom",
       "name": "自动完成输入框",
       "icon": "text-field",
       "options": {
         "placeholder": "",
         "defaultValue": null,
-        "componentName": "fm-ele-auto-complete-sample",
+        "componentName": "fm-ele-auto-complete-sample2",
         "eleautocompletesampleset": {
           "remoteUrlAlias": "",
           "remoteUrl": "",
@@ -99,7 +99,23 @@
           }
         },
         "width": "100%",
-        "disabled": false
+        "disabled": false,
+        "clearable":true,
+
+        "showLabel":false,
+        "options":[],
+        "sourceType": "json",
+        "remoteUrlAlias": null,
+        "jsonOptions": [],
+        "remoteOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label",
+          "children": "children",
+          "data": "{}"
+        },
+        "remoteFunc": ""
+
       },
       "blacklist": [
         "componentName"
@@ -147,14 +163,14 @@
       ]
     },
     {
-      "componentName": "fm-ele-auto-complete-sample",
+      "componentName": "fm-ele-auto-complete-sample2",
       "type": "custom",
       "name": "输入推荐",
       "icon": "chalkboard",
       "options": {
         "placeholder": "",
         "defaultValue": [],
-        "componentName": "fm-ele-auto-complete-sample",
+        "componentName": "fm-ele-auto-complete-sample2",
 
         "clearable": true,
         "disabled": false,
@@ -234,17 +250,16 @@
           "table"
         ],
         "n": "自动完成输入框",
-        "v": "fm-ele-auto-complete-sample",
+        "v": "fm-ele-auto-complete-sample2",
         "set": {
-          "componentName": "fm-ele-auto-complete-sample",
-          "componentSet": "fm-ele-auto-complete-sample-set",
+          "componentName": "fm-ele-auto-complete-sample2",
           "type": "custom",
           "name": "自动完成输入框",
           "icon": "text-field",
           "options": {
             "placeholder": "",
             "defaultValue": null,
-            "componentName": "fm-ele-auto-complete-sample",
+            "componentName": "fm-ele-auto-complete-sample2",
             "eleautocompletesampleset": {
               "remoteUrlAlias": "",
               "remoteUrl": "",
@@ -254,7 +269,25 @@
               }
             },
             "width": "100%",
-            "disabled": false
+            "disabled": false,
+
+            "clearable":true,
+
+            "showLabel":false,
+            "options":[],
+            "sourceType": "json",
+            "remoteUrlAlias": null,
+            "jsonOptions": [],
+            "remoteOptions": [],
+            "props": {
+              "value": "value",
+              "label": "label",
+              "children": "children",
+              "data": "{}"
+            },
+            "remoteFunc": ""
+
+
           }
         }
       },
@@ -479,16 +512,16 @@
           "table"
         ],
         "n": "输入推荐",
-        "v": "fm-ele-auto-complete-sample",
+        "v": "fm-ele-auto-complete-sample2",
         "set": {
-          "componentName": "fm-ele-auto-complete-sample",
+          "componentName": "fm-ele-auto-complete-sample2",
           "type": "custom",
           "name": "输入推荐",
           "icon": "chalkboard",
           "options": {
             "placeholder": "",
             "defaultValue": [],
-            "componentName": "fm-ele-auto-complete-sample",
+            "componentName": "fm-ele-auto-complete-sample2",
 
             "clearable": true,
             "disabled": false,
@@ -717,15 +750,15 @@
         "funeval": "(paras)=>{\n                    console.log('paras',paras)\n                    \n                    let num = Number(eval(paras[0])).toFixed(paras.length>1?paras[1]:2)\n    \t\t        return num;\n                }"
       }
     ],
-    "remoteurl": "http://localhost:8095/api/oa/form/remote_func/",
+    "remoteurl": "/form-generater/remote_func/",
     "remotefun": [
       {
         "usedscope": [
-          "EleAutoCompleteSample"
+          "DataSourceAdmin"
         ],
         "p": "",
         "n": "测试",
-        "v": "test",
+        "v": "test.json",
         "props": {
           "method": "post",
           "value": "value",
@@ -738,7 +771,7 @@
           "DataSourceAdmin"
         ],
         "n": "简单进销存-仓库列表",
-        "v": "sample-depots",
+        "v": "sample-depots.json",
         "props": {
           "method": "post",
           "value": "value",
@@ -752,7 +785,7 @@
         ],
         "p": "输入商品名称，拼音，拼音首字母获取商品编码",
         "n": "简单进销存-商品编码",
-        "v": "sample-wareid",
+        "v": "sample-wareid.json",
         "props": {
           "method": "post",
           "value": "value",
@@ -813,49 +846,6 @@
         "placeholder": "将输入的数据四舍五入后保留N位数，默认保留2位。参数1是要转换的数据，参数2是保留的位数，默认是2",
         "funname": "四舍五入保留小数",
         "funeval": "(paras)=>{\n                    console.log('paras',paras)\n                    \n                    let num = Number(eval(paras[0])).toFixed(paras.length>1?paras[1]:2)\n    \t\t        return num;\n                }"
-      }
-    ],
-    "remoteurl": "http://localhost:8095/api/oa/form/remote_func/",
-    "remotefun": [
-      {
-        "usedscope": [
-          "EleAutoCompleteSample"
-        ],
-        "p": "",
-        "n": "测试",
-        "v": "test",
-        "props": {
-          "method": "post",
-          "value": "value",
-          "label": "label",
-          "children": "children"
-        }
-      },
-      {
-        "usedscope": [
-          "DataSourceAdmin"
-        ],
-        "n": "简单进销存-仓库列表",
-        "v": "sample-depots",
-        "props": {
-          "method": "post",
-          "value": "value",
-          "label": "label",
-          "children": "children"
-        }
-      },
-      {
-        "usedscope": [
-          "EleAutoCompleteSample"
-        ],
-        "p": "输入商品名称，拼音，拼音首字母获取商品编码",
-        "n": "简单进销存-商品编码",
-        "v": "sample-wareid",
-        "props": {
-          "method": "post",
-          "value": "value",
-          "label": "label"
-        }
       }
     ]
   }

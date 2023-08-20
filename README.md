@@ -401,6 +401,21 @@ export default {
             })
     }
 })
+
+
+({
+    "default": function ({
+        buttonset,//当前button设置
+        Models,//表单全部值
+        FormConfig,//表单设置
+        RecursiveFormList, //转换工具
+        HttpRequest//http访问函数；来自axios
+    }) {
+
+        alert('hello word')
+
+    }
+})
 ```
 [查看参数如何配置](#handle_fun)
 和全局触发的类似；
@@ -937,10 +952,12 @@ advanceComponents:[
             }
         ],
         "remoteurl": "http://localhost:8095/api/oa/form/remote_func/",
+        //服务的路径
         "remotefun": [{
             "usedscope": [
                 "EleAutoCompleteSample"
-                //哪些组件可以使用
+                //哪些组件可以使用：一般用于自定义组件的识别
+                //"DataSourceAdmin" 表示表格可以使用；如果需要表格中使用要加上
             ],
             "p": "",
             "n": "测试",
@@ -1005,10 +1022,11 @@ advanceComponents:[
             }
         ],
         "remoteurl": "http://localhost:8095/api/oa/form/remote_func/",
+        //表格里面的配置，如果不配置的话，就按表单（form）里面的配置来
         "remotefun": [
             {
                 "usedscope": [
-                    "DataSourceAdmin"
+                 
                 ],
                 "n": "简单进销存-仓库列表",
                 "v": "sample-depots",

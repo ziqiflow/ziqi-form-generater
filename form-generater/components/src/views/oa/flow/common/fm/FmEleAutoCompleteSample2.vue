@@ -2,8 +2,7 @@
 <div>
 <!--    {{dataOptions}}-->
 <!--    :trigger-on-focus="false"-->
-    <el-autocomplete @change="change" :debounce='1000' :trigger-on-focus="false"
-                     :disabled="disabled" v-model="sync_value" :fetch-suggestions="querySearchAsync" :placeholder='placeholder' :value-key="keyvalue2" @select="handleSelect">
+    <el-autocomplete @change="change" :debounce='1000' :trigger-on-focus="false"                     :disabled="disabled" v-model="sync_value" :fetch-suggestions="querySearchAsync" :placeholder='placeholder' :value-key="keyvalue2" @select="handleSelect">
         <template slot-scope="{ item }">
             {{ item.label }}
         </template>
@@ -18,7 +17,7 @@ import propsync from 'vue-propsync'
 import cmixins from './mixins.js'
 
 export default {
-    name: 'CEleAutoComplete',
+    name: 'CEleAutoComplete2',
 
     mixins: [propsync, cmixins],
 
@@ -157,18 +156,27 @@ export default {
                     let options=this.copyobject(this.options);
 
                     if(!!options.tableset){
+                        //如果是表格情况下
 
+                        let data=options.tableset.datasourceAdvanced.props.data;
+                        if(!data){
+                            data='{}';
+                        }
                         options.tableset.datasourceAdvanced.props.data=
                             JSON.stringify(
-                                Object.assign(JSON.parse(options.tableset.datasourceAdvanced.props.data),{
-                            'name':string
+                                Object.assign(JSON.parse(data),{
+                            'q':string
                         }))
                         console.log('options',options.tableset)
                         this.$emit('initdataoptions', options.tableset);
 
                     }else{
-                        options.props.data=JSON.stringify(Object.assign(JSON.parse(options.props.data),{
-                            'name':string
+                        let data=options.props.data;
+                        if(!data){
+                            data='{}';
+                        }
+                        options.props.data=JSON.stringify(Object.assign(JSON.parse(data),{
+                            'q':string
                         }))
                         console.log('options',options)
                         this.$emit('initdataoptions', options);
